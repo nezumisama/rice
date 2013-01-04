@@ -92,14 +92,20 @@ textbox#urlbar {
 /* selected tab */
 .tabbrowser-tab[selected="true"] {
     background: #444444 !important;
-    font-weight: bold !important
+    font-weight: bold !important;
 }
-/* toolbar */
+/* primary toolbar */
 .toolbar-primary {
     background: #000 !important;
     max-height: 16px !important; 
     min-height: 0px !important; 
     padding: 0px !important;
+}
+/* addon-bar */
+.addon-bar {
+    background: #000 !important;
+    max-height: 16px !important; 
+    min-height: 0px !important; 
 }
 /* tabs container */
 .tabbrowser-tabs { 
