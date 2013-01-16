@@ -1,0 +1,46 @@
+style "default" {        
+    bg[ACTIVE]         = "#444444"
+    bg[INSENSITIVE]    = "#000000"
+    bg[NORMAL]         = "#000000"
+    bg[PRELIGHT]       = "#888888"
+    bg[SELECTED]       = "#666666"
+
+    fg[ACTIVE]         = "#ffffff"
+    fg[INSENSITIVE]    = "#ffffff"
+    fg[NORMAL]         = "#ffffff"
+    fg[PRELIGHT]       = "#ffffff"
+    fg[SELECTED]       = "#ffffff"
+    
+    base[ACTIVE]       = "#444444"
+    base[INSENSITIVE]  = "#000000"
+    base[NORMAL]       = "#000000"
+    base[PRELIGHT]     = "#888888"
+    base[SELECTED]     = "#666666"
+
+    text[ACTIVE]       = "#ffffff"
+    text[INSENSITIVE]  = "#ffffff"
+    text[NORMAL]       = "#ffffff"
+    text[PRELIGHT]     = "#ffffff"
+    text[SELECTED]     = "#ffffff"
+    
+    xthickness                         = 0
+    ythickness                         = 0
+    GtkRange::slider_width             = 10
+    GtkProgressBar::xspacing           = 0
+    GtkProgressBar::yspacing           = 0 
+    GtkButton::default_border          = {0, 0, 0, 0}
+    GtkButton::default_outside_border  = {0, 0, 0, 0}
+    GtkButton::inner-border            = {0, 0, 0, 0}
+    GtkCheckButton::indicator_size     = 12
+    GtkRadioButton::indicator_size     = 12
+    GtkRange::trough_border            = 0
+    
+    engine "industrial" {
+        contrast                       = 0.6
+        rounded_buttons                = FALSE
+        hint                           = "use-hints"
+    }
+
+}
+
+class "GtkWidget" style "default"
