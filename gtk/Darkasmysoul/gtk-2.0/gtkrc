@@ -15,7 +15,7 @@ style "default" {
     base[INSENSITIVE]  = "#000000"
     base[NORMAL]       = "#000000"
     base[PRELIGHT]     = "#888888"
-    base[SELECTED]     = "#000044"
+    base[SELECTED]     = "#092980"
 
     text[ACTIVE]       = "#ffffff"
     text[INSENSITIVE]  = "#ffffff"
