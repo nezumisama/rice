@@ -3,8 +3,8 @@
 #search-container { max-width: 250px !important }
 /* urlbar */
 #urlbar-container { 
-    max-width: 250px !important;
-    min-width: 250px !important;
+    max-width: 200px !important;
+    min-width: 200px !important;
     background: inherit !important;
 }
 /* favicon (or throbber when tab is loading) */
@@ -31,7 +31,7 @@ textbox#urlbar {
 /* top level container for tabs */ 
 #navigator-toolbox { border-bottom: none !important; }
 /* menu button */
-#appmenu-toolbar-button { display: none !important; }
+#appmenu-toolbar-button, #appmenu-button { display: none !important; }
 /* identity box text label */
 #identity-icon-labels { display: none !important; }
 /* identity box icon */
