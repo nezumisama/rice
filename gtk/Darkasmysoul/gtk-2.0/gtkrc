@@ -34,13 +34,26 @@ style "default" {
     GtkCheckButton::indicator_size     = 12
     GtkRadioButton::indicator_size     = 12
     GtkRange::trough_border            = 0
-    
+
     engine "industrial" {
         contrast                       = 0.6
         rounded_buttons                = FALSE
         hint                           = "use-hints"
     }
-
 }
 
 class "GtkWidget" style "default"
+
+# notebook
+style "notebook_label" {
+    fg[ACTIVE]         = "#888888"
+    fg[NORMAL]         = "#ffffff"
+}
+style "notebook" {
+    bg[ACTIVE]         = "#000000"
+    fg[ACTIVE]         = "#000000"
+    fg[NORMAL]         = "#ffffff"
+}
+class "GtkNotebook" style "notebook"
+widget_class "*.GtkNotebook.*" style "notebook_label"
+

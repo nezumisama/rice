@@ -76,6 +76,8 @@ textbox#urlbar {
 .urlbar-history-dropmarker { display: none !important; }
 /* tab close button */
 .tab-close-button { display: none !important; }
+/* new tab button */
+.tabs-newtab-button { display: none !important; }
 /* tab */
 .tabbrowser-tab {
     color: #fff !important;
@@ -110,7 +112,6 @@ textbox#urlbar {
 /* tabs container */
 .tabbrowser-tabs { 
     background: inherit !important; 
-    /* border: 1px dashed #f00 !important; */
 }
 /* scrollbar */
 scrollbar {
