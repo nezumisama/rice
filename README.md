@@ -1,2 +1,3 @@
-## This repository contains various configuration file for desktop theming.
-See README files in different catalogs to learn what are the files in them for.
+## Color schemes for geany.
+Put them in `~/.config/geany/colorschemes`.
+
