@@ -1,24 +1,24 @@
 style "default" {        
-    bg[ACTIVE]         = "#444444"
-    bg[INSENSITIVE]    = "#000000"
-    bg[NORMAL]         = "#000000"
-    bg[PRELIGHT]       = "#888888"
+    bg[ACTIVE]         = "#383838"
+    bg[INSENSITIVE]    = "#1a1a1a"
+    bg[NORMAL]         = "#1a1a1a"
+    bg[PRELIGHT]       = "#484848"
     bg[SELECTED]       = "#666666"
 
     fg[ACTIVE]         = "#ffffff"
-    fg[INSENSITIVE]    = "#ffffff"
+    fg[INSENSITIVE]    = "#1a1a1a"
     fg[NORMAL]         = "#ffffff"
     fg[PRELIGHT]       = "#ffffff"
     fg[SELECTED]       = "#ffffff"
     
-    base[ACTIVE]       = "#444444"
-    base[INSENSITIVE]  = "#000000"
-    base[NORMAL]       = "#000000"
-    base[PRELIGHT]     = "#888888"
+    base[ACTIVE]       = "#383838"
+    base[INSENSITIVE]  = "#101010"
+    base[NORMAL]       = "#101010"
+    base[PRELIGHT]     = "#484848"
     base[SELECTED]     = "#092980"
 
     text[ACTIVE]       = "#ffffff"
-    text[INSENSITIVE]  = "#ffffff"
+    text[INSENSITIVE]  = "#888888"
     text[NORMAL]       = "#ffffff"
     text[PRELIGHT]     = "#ffffff"
     text[SELECTED]     = "#ffffff"
@@ -34,12 +34,19 @@ style "default" {
     GtkCheckButton::indicator_size     = 12
     GtkRadioButton::indicator_size     = 12
     GtkRange::trough_border            = 0
-
+    GtkRange::slider-width             = 6
+    GtkStatusbar::shadow-type          = GTK_SHADOW_NONE
+    GtkComboBox::arrow-size            = 6
+    
     engine "industrial" {
-        contrast                       = 0.6
+        contrast                       = 0.25
         rounded_buttons                = FALSE
         hint                           = "use-hints"
     }
+    /*
+    engine "mist" {        
+    }
+    */
 }
 
 class "GtkWidget" style "default"
@@ -50,10 +57,21 @@ style "notebook_label" {
     fg[NORMAL]         = "#ffffff"
 }
 style "notebook" {
-    bg[ACTIVE]         = "#000000"
-    fg[ACTIVE]         = "#000000"
+    bg[ACTIVE]         = "#1a1a1a"
+    fg[ACTIVE]         = "#1a1a1a"
     fg[NORMAL]         = "#ffffff"
 }
 class "GtkNotebook" style "notebook"
 widget_class "*.GtkNotebook.*" style "notebook_label"
 
+/*
+# scrollbar
+style "scrollbar"
+{
+   GtkRange::slider-width = 6 
+}
+
+class "GtkScrollbar"   style "scrollbar"
+class "GtkVScrollbar"  style "scrollbar"
+class "GtkHScrollbar"  style "scrollbar"
+*/

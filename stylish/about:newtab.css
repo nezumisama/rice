@@ -3,7 +3,7 @@
 @-moz-document url("about:newtab") {
 
 #newtab-scrollbox {
-    background: #000 !important;
+    background: #1a1a1a !important;
 }
 .newtab-cell {
     background: #222 !important;

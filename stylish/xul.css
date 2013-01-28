@@ -20,7 +20,7 @@
 }
 /* textbox in the urlbar */
 textbox#urlbar {
-    background: #000 !important;
+    background: #1a1a1a !important;
     color: #fff !important;
     -moz-appearance: none !important;
     margin: 0px 3px 0px 0px !important;
@@ -81,7 +81,7 @@ textbox#urlbar {
 /* tab */
 .tabbrowser-tab {
     color: #fff !important;
-    background: #282828 !important;
+    background: #1a1a1a !important;
     border: none !important;
     border-radius: 0px !important;
     min-height: 0px !important;
@@ -98,14 +98,14 @@ textbox#urlbar {
 }
 /* primary toolbar */
 .toolbar-primary {
-    background: #000 !important;
+    background: #1a1a1a !important;
     max-height: 16px !important; 
     min-height: 0px !important; 
     padding: 0px !important;
 }
 /* addon-bar */
 .addon-bar {
-    background: #000 !important;
+    background: #1a1a1a !important;
     max-height: 16px !important; 
     min-height: 0px !important; 
 }
