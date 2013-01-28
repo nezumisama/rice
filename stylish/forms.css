@@ -1,0 +1,20 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+input, textarea, option {
+    -moz-appearance: none !important;
+    background: #fff;
+    color: #000;
+    border: none !important;
+}
+input[type="search"] {
+    border: 1px solid #000 !important;
+}
+input[type="checkbox"] {
+    -moz-appearance: checkbox !important;
+}
+select {
+    -moz-appearance: menulist !important;
+    color: #fff !important;
+    background: #000 !important;
+    border: none !important;
+    border-radius: 0px !important;
+}

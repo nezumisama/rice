@@ -3,8 +3,8 @@
 #search-container { max-width: 250px !important }
 /* urlbar */
 #urlbar-container { 
-    max-width: 200px !important;
-    min-width: 200px !important;
+    max-width: 250px !important;
+    min-width: 250px !important;
     background: inherit !important;
 }
 /* favicon (or throbber when tab is loading) */

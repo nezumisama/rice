@@ -1,7 +1,9 @@
 ## Css files for stylish. 
 They can also be used for userChrome.css/userStyle.css.
-* *xul.css* themes the Firefox UI.
-* *about:newtab.css* themes the "speed dial" page in Firefox.
+* `xul.css` themes the Firefox UI.
+* `about:newtab.css` themes the "speed dial" page in Firefox.
+* `forms.css` changes a few properties of form elements to make them look better.
+* `view_image.css` themes background image on image view pages (this works together with the extension *pic style - checkerboard*.
 * For other files the name should tell you what does that file theme.
 
 ## Notes:

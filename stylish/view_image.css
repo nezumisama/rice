@@ -1,0 +1,6 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+/* Note: this works with the pic style - checkerboard extension. */
+body.picstyle_body {
+    background-color: transparent !important;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3AwPBDoC+BWcKgAAACtJREFUOMtjlJKS+s+AB0hKSuKTZmBioBCMGjAYDGAhFM/Pnz8fDcThbwAAcCYEulcg40EAAAAASUVORK5CYII=") !important;
+}

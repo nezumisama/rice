@@ -8,6 +8,7 @@
 .newtab-cell {
     background: #222 !important;
     border: none !important;
+    box-shadow: none !important;
 }
 .newtab-title {
     background: rgba(0, 0, 0, 0.75) !important;
@@ -18,7 +19,7 @@
     opacity: 1 !important;
 }
 .newtab-cell:hover, .newtab-site:hover, .newtab-site[dragged] {
-  box-shadow: none !important;
+    box-shadow: none !important;
 }
 .newtab-control-pin {
     background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFZSURBVHja7NS/S0JRFMDx78vnj4gowrLeINXSVEG9fhBC0FQhri0JFa0S0ZKbQ2M0NERb0R/g0ODSlkvlIWmMGoTkNYRgS4Vkr0UkNX88qc2zncP9XA7nHq5i0ny00cJ/hUUVd5NY3ATwNYWlmxUizDWBxc4qIUaZEa9FLL342WEEGGbSEhY764QZBKCPTRmTTgCxVWK1jA4xzzY9hdTBMnmi8sonWeI1sbQzTQgPSrFk4mccGzdEK3Fp205yxLggXawoKHhRSXJX2bZilqwFKna8TLCBr9CVyT37nOhfdfCPa2Y5ZKqQxFjTXywsiX7FARkgRQIPAXFZ2+0nnCQ5Zg8HuwSlywruIMURp/o5W+QIE5SB8iO2SBVr9JPmTM+C8cwjPhbIGQkt3xj+4Fp/B9Dy2oNhsISLWyOjmXWn/cv8F3EQJ6ubVdezRlyC/tbQO7e+3n/B3wMAgLhd6AMJkXEAAAAASUVORK5CYII=") !important;
