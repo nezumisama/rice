@@ -1,0 +1,7 @@
+#!/bin/sh
+cp -pi termite.conf $XDG_CONFIG_HOME/termite/config
+cp -pi ncmpcpp/config $HOME/.ncmpcpp/config
+cp -pi ncmpcpp/bindings $HOME/.ncmpcpp/bindings
+
+
+

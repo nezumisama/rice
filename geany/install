@@ -1,0 +1,2 @@
+#!/bin/sh
+cp -pi *.conf $XDG_CONFIG_HOME/geany/colorschemes

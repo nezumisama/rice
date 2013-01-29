@@ -1,0 +1,9 @@
+#!/bin/sh
+cd geany
+./install
+cd ../gtk
+./install
+cd ../misc
+./install
+cd ..
+
