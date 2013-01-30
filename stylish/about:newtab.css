@@ -1,7 +1,7 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 @-moz-document url("about:newtab") {
 #newtab-scrollbox {
-    background: #1a1a1a !important;
+    background: #0d0d0d !important;
 }
 .newtab-cell {
     background: #222 !important;

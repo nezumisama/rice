@@ -1,12 +1,14 @@
-style "default" {        
+gtk_color_scheme="bg_color: #0d0d0d"
+
+style "default" {
     bg[ACTIVE]         = "#383838"
-    bg[INSENSITIVE]    = "#1a1a1a"
-    bg[NORMAL]         = "#1a1a1a"
+    bg[INSENSITIVE]    = @bg_color
+    bg[NORMAL]         = @bg_color
     bg[PRELIGHT]       = "#484848"
     bg[SELECTED]       = "#666666"
 
     fg[ACTIVE]         = "#ffffff"
-    fg[INSENSITIVE]    = "#1a1a1a"
+    fg[INSENSITIVE]    = @bg_color
     fg[NORMAL]         = "#ffffff"
     fg[PRELIGHT]       = "#ffffff"
     fg[SELECTED]       = "#ffffff"
@@ -39,7 +41,7 @@ style "default" {
     GtkComboBox::arrow-size            = 6
     
     engine "industrial" {
-        contrast                       = 0.25
+        contrast                       = 0.35
         rounded_buttons                = FALSE
         hint                           = "use-hints"
     }
@@ -57,8 +59,8 @@ style "notebook_label" {
     fg[NORMAL]         = "#ffffff"
 }
 style "notebook" {
-    bg[ACTIVE]         = "#1a1a1a"
-    fg[ACTIVE]         = "#1a1a1a"
+    bg[ACTIVE]         = @bg_color
+    fg[ACTIVE]         = @bg_color
     fg[NORMAL]         = "#ffffff"
 }
 class "GtkNotebook" style "notebook"
