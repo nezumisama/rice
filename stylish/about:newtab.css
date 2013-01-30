@@ -1,7 +1,5 @@
 @namespace url(http://www.w3.org/1999/xhtml);
-
 @-moz-document url("about:newtab") {
-
 #newtab-scrollbox {
     background: #1a1a1a !important;
 }
@@ -58,5 +56,4 @@
     z-index: 1000;
     content: "";
 }
-
 }

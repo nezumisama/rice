@@ -1,0 +1,16 @@
+#!/usr/bin/env python2
+
+import os, os.path, sys, sqlite3
+if len(sys.argv)<2:
+    print "Usage: %s stylename" % sys.argv[0]
+    exit() 
+ffdir = os.environ['HOME']+"/.mozilla/firefox"
+path  = ffdir + "/"
+path += filter(lambda i:i.endswith("default"), os.listdir(ffdir))[0]
+path += "/stylish.sqlite"
+conn = sqlite3.connect(path) 
+cur = conn.cursor()
+cur.execute("select code from styles where name=?", (sys.argv[1], ))  
+print cur.fetchone()[0]
+conn.close()
+
