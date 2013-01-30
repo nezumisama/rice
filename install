@@ -5,5 +5,17 @@ cd ../gtk
 ./install
 cd ../misc
 ./install
+cd ../stylish
+read -p "Do you want to update stylish styles [y/n]?" yn
+if [ $yn = y -o $yn = Y ]
+ then
+ read -p "Do you want every style to be updated without asking [y/n]?" yn
+ if [ $yn = y -o $yn = Y ]
+ then 
+  yes y | ./update
+ else
+  ./update
+ fi
+fi
 cd ..
 

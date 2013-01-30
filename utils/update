@@ -1,0 +1,37 @@
+#!/bin/bash
+cpcmd="cp -pi"
+diffcmd="diff -u"
+
+cmd=$cpcmd
+help="Use option -d to diff instead of update."
+n=0
+mydir=`dirname $0`
+while getopts "hd" opt
+do
+ case $opt in
+  h) echo -e "$help"; exit 0 ;;
+  d) cmd=$diffcmd; let "n++" ;;
+ esac
+done
+while [[ "$n" -gt 0 ]]; do shift; let "n--"; done
+
+for i in `ls $mydir/../stylish/*.css`
+do
+ styles=(${styles[*]} `basename $i .css`)
+done
+
+ricedir=`echo $1 | sed 's_/$__'`
+$cmd $XDG_CONFIG_HOME/termite/config $ricedir/misc/termite.conf
+$cmd $XDG_CONFIG_HOME/geany/colorschemes/darkmono.conf $ricedir/geany/darkmono.conf
+$cmd $XDG_CONFIG_HOME/geany/colorschemes/neon.conf $ricedir/geany/neon.conf
+$cmd $HOME/.ncmpcpp/config $ricedir/misc/ncmpcpp/config
+$cmd $HOME/.ncmpcpp/bindings $ricedir/misc/ncmpcpp/bindings
+$cmd $HOME/.themes/Darkasmysoul/gtk-2.0/gtkrc $ricedir/gtk/Darkasmysoul/gtk-2.0/gtkrc
+stylestmpdir=/tmp/styles-$$
+mkdir -p $stylestmpdir
+for i in ${styles[*]}
+do 
+ $mydir/stylish_export_style $i > $stylestmpdir/$i.css
+ $cmd $stylestmpdir/$i.css $ricedir/stylish/$i.css
+done
+rm -r $stylestmpdir
