@@ -31,7 +31,7 @@ textbox#urlbar {
     box-shadow: none !important;
 }
 /* input element in urlbar */
-html|*.urlbar-input {
+html|input.urlbar-input {
     color: #fff !important; 
 }
 /* top level container for tabs */ 

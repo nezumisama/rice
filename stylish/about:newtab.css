@@ -3,18 +3,52 @@
 #newtab-scrollbox {
     background: #0d0d0d !important;
 }
+#newtab-grid {
+    min-width: 0px !important;
+    min-height: 0px !important;
+    -moz-box-flex: 60 !important;
+}
+.newtab-side-margin {
+    min-width: 20px !important;
+    -moz-box-flex: 1 !important;
+}
+#newtab-horizontal-margin {
+    -moz-box-flex: 40 !important;
+}
+#newtab-margin-top, #newtab-margin-bottom {
+    min-height: 0px !important;
+    -moz-box-flex: 1 !important;
+}
+.newtab-row {
+    margin-bottom: 5px !important;
+}
 .newtab-cell {
-    background: #222 !important;
+    background: transparent !important;
     border: none !important;
+    border-radius: 0px !important;
     box-shadow: none !important;
+    margin-right: 5px !important;
 }
 .newtab-title {
     background: rgba(0, 0, 0, 0.75) !important;
+    box-shadow: none !important;
     color: #fff !important;
     border: none !important;
+    text-align: center !important;
 }
 .newtab-thumbnail, .newtab-thumbnail:hover {
     opacity: 1 !important;
+    /*
+    scale thumbnail to perfectly fit the cell
+    background-size: 100% 100% !important;
+    */
+    /*
+    scale thumbnail to fit the cell while perserving aspect ratio
+    background-position: center center !important;
+    background-size: contain !important;
+    */
+    /* scale thumbnail to the largest size that will fit in either direction (in the other it will be clipped) while perserving aspect ratio */
+    background-size: cover !important;
 }
 .newtab-cell:hover, .newtab-site:hover, .newtab-site[dragged] {
     box-shadow: none !important;
@@ -55,5 +89,17 @@
     height: 24px;
     z-index: 1000;
     content: "";
+}
+#newtab-toggle {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAOCAYAAAA8E3wEAAAABmJLR0QAgACAAIBEKJNNAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEfATkEX0XovAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAOElEQVQ4y2NsaGj4z4AEGhoaGIkRY2BgaEBT09jQ0FBPSIyJgc5g+FtId8A4mmhGE81oohl5iQYASKE5E5v5U8MAAAAASUVORK5CYII=") !important;   
+    background-position: 0px 0px !important;
+    width: 14px !important;
+    height: 14px !important;
+    position: absolute !important;
+    top: 2px !important;
+    right: 2px !important;
+}
+#newtab-toggle[page-disabled] {
+    background-position: 14px 0px !important;
 }
 }
