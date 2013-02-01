@@ -10,11 +10,11 @@
 }
 /* favicon (or throbber when tab is loading) */
 .tab-throbber, .tab-icon-image {
-  width: 16px;
-  height: 16px;
-  margin: 0px 3px 0px 0px !important;
-  /* this will apply an svg filter, which will desaturate the image  (i.e. make it grayscale) */
-  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filters" color-interpolation-filters="sRGB"><feColorMatrix id="f1" type="saturate" values="0" /></filter></svg>#filters') !important;
+    max-width: 14px;
+    max-height: 14px;
+    margin: 0px 3px 0px 0px !important;
+    /* this will apply an svg filter, which will desaturate the image  (i.e. make it grayscale) */
+    filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filters" color-interpolation-filters="sRGB"><feColorMatrix id="f1" type="saturate" values="0" /></filter></svg>#filters') !important;
 }
 /* container of scrollbox (which contains tabs) */
 .tabbrowser-arrowscrollbox {
@@ -82,6 +82,7 @@ html|input.urlbar-input {
     min-width: 0px !important;  
     min-height: 0px !important;
     border: 0px !important;
+    border-radius: 0px !important;
     margin: 0px !important;
     padding: 0px !important;
     background: transparent !important;
@@ -113,7 +114,7 @@ html|input.urlbar-input {
     display: none !important; 
 }
 /* new tab button */
-.tabs-newtab-button { 
+.tabs-newtab-button, #new-tab-button {
     background: transparent !important;
     border-radius: 0px !important;
     box-shadow: none !important;
@@ -126,7 +127,7 @@ html|input.urlbar-input {
     list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAfAAAAHwBFQ/t5AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABzSURBVCiR1ZLLDYAgEEQfxhIsgi60IIvAHixIu7AIehgvEJFANHjyJZMs+0lmwxpJtNBX8jYI4Ai6I6kkpwtX6umafEL7YNxxAOYkP2WxS94r4KNnq/fYTztGqx5YMntjiHdgS2oe+NN3mMqtPp5cbfCRE01Doi72BnyUAAAAAElFTkSuQmCC") !important;
     -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
 }
-.tabs-newtab-button:hover {
+.tabs-newtab-button:hover, #new-tab-button:hover {
     /* icon (same as in normal state) */
     -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
 }
@@ -148,22 +149,33 @@ html|input.urlbar-input {
     background: #444 !important;
     font-weight: bold !important;
 }
-/* primary toolbar */
-.toolbar-primary {
-    background: #0d0d0d !important;
-    max-height: 16px !important; 
-    min-height: 0px !important; 
-    padding: 0px !important;
-}
-/* addon-bar */
-.addon-bar {
-    background: #0d0d0d !important;
-    max-height: 16px !important; 
-    min-height: 0px !important; 
-}
 /* tabs container */
 .tabbrowser-tabs { 
-    background: inherit !important; 
+    background: inherit !important;
+    max-height: inherit !important;
+}
+/* primary toolbar (like tabs toolbar, addon bar etc.) */
+.toolbar-primary {
+    background: #0d0d0d !important;
+    height: 16px !important; 
+    min-height: 0px !important;
+    padding: 0px !important;
+    border: none !important;
+}
+/* tabs toolbar #TabsToolbar { } */
+/* addon-bar #addon-bar { } */
+/* status bar (the element right of addon bar */
+#status-bar {
+    background: transparent !important;
+}
+/* button on the addon toolbar */
+/* #addon-bar > .toolbarbutton-1 { } */
+/* tab scroll buttons */
+.scrollbutton-up, .scrollbutton-down {
+    background: transparent !important;
+    /* right arrow triangle icon */
+    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAYAAAAbvf3sAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAWAAAAFgBeNpLYgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABuSURBVCiRndK7DYNAEEXRhYDMuSugBBdBE1ThJtyEq3ARlEAFzslIOERIK7QImCtNdp80v4R0sVr8rogPfDA7ESv0+Ms4kl8YFNiLT3yxlOQ80OCN6UjMAx3GM3GjTneJtBQaOrzW8OFCr1F8vhV3IBreXlsNSwAAAABJRU5ErkJggg==") !important;
+    -moz-image-region: rect(0px, 12px, 14px, 0px) !important;
 }
 /* scrollbar */
 scrollbar {
@@ -184,11 +196,8 @@ scrollbar[orient="horizontal"] {
 scrollbar thumb {
     -moz-appearance: none !important;
     border: none !important;
-    background: #888 !important;
+    background: #666 !important;
     border-radius: 0px !important;
-}
-scrollbar thumb:hover, scrollbar thumb:active { 
-    background: #ddd !important; 
 }
 /* scrollbar up/down arrow buttons */
 scrollbar[orient="horizontal"] scrollbarbutton {
@@ -200,5 +209,21 @@ scrollbar[orient="vertical"] scrollbarbutton {
     min-height: 10px !important;
 }
 scrollbarbutton {
-    background: #333 !important;
+    background: transparent !important;
+}
+
+/* hover background color */
+#appmenu-toolbar-button:hover, /* menu button */
+.tabbrowser-tab:hover,         /* tab */
+toolbarbutton:hover,           /* toolbar button */
+.tabs-newtab-button:hover,     /* new tab button */
+#new-tab-button:hover,
+.scrollbutton-up:hover,        /* scrollbuttons */
+.scrollbutton-down:hover,
+#identity-box:hover,           /* identity box */
+scrollbar thumb:hover,         /* scrollbar handle */
+scrollbar thumb:active { 
+    background: #368 !important;
+    box-shadow: none !important;
+    transition-duration: 0.1s !important;
 }
