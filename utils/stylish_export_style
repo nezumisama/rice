@@ -16,6 +16,6 @@ tmp = cur.fetchone()
 if not tmp:
     print "No style named \"%s\" exists in stylish database." % style
     exit(-1)
-print tmp[0]
+sys.stdout.write(tmp[0])
 conn.close()
 
