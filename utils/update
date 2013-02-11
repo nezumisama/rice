@@ -26,11 +26,13 @@ do
 done
 ricedir=`echo ${1:-$mydir/..} | sed 's_/$__'`
 $cmd $XDG_CONFIG_HOME/termite/config $ricedir/misc/termite.conf
+$cmd $HOME/.tmux.conf $ricedir/misc/tmux.conf
 $cmd $XDG_CONFIG_HOME/geany/colorschemes/darkmono.conf $ricedir/geany/darkmono.conf
 $cmd $XDG_CONFIG_HOME/geany/colorschemes/neon.conf $ricedir/geany/neon.conf
 $cmd $HOME/.ncmpcpp/config $ricedir/misc/ncmpcpp/config
 $cmd $HOME/.ncmpcpp/bindings $ricedir/misc/ncmpcpp/bindings
 $cmd $HOME/.themes/Darkasmysoul/gtk-2.0/gtkrc $ricedir/gtk/Darkasmysoul/gtk-2.0/gtkrc
+
 stylestmpdir=/tmp/styles-$$
 mkdir -p $stylestmpdir
 for i in ${styles[*]}

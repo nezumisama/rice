@@ -1,10 +1,14 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 @-moz-document domain("4chan.org") {
 /* Inverse colors of captcha */
+/*
 .captchaimg > img {
     border: none !important;
     filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filters" color-interpolation-filters="sRGB"><feColorMatrix values="0.09 -0.87 0 0 0.87 0.1 -0.87 0 0 0.87 0.1 -0.87 0 0 0.87 0 0 0 1 0" /></filter></svg>#filters') !important;
 }
-/* Hide show QR link in appchanx */
 a#showQR { display:none !important; }
+*/
+div#qr {
+    max-width: 300px !important;
+}
 }
