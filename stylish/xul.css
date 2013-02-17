@@ -12,7 +12,7 @@
 .tab-throbber, .tab-icon-image {
     max-width: 14px;
     max-height: 14px;
-    margin: 0px 3px 0px 0px !important;
+    margin: 0px 3px 0px 1px !important;
     /* this will apply an svg filter, which will desaturate the image  (i.e. make it grayscale) */
     filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filters" color-interpolation-filters="sRGB"><feColorMatrix id="f1" type="saturate" values="0" /></filter></svg>#filters') !important;
 }
@@ -48,7 +48,6 @@ html|input.urlbar-input {
     border-radius: 0px !important;
     border: none !important;
     font-family: sans-serif !important;
-    font-size: 12px !important;
     box-shadow: none !important;
     -moz-appearance: none !important;
 }
