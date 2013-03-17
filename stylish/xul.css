@@ -145,7 +145,7 @@ html|input.urlbar-input {
 }
 /* selected tab */
 .tabbrowser-tab[selected="true"] {
-    background: #444 !important;
+    /* background: #444 !important; */
     font-weight: bold !important;
 }
 /* tabs container */
@@ -155,7 +155,7 @@ html|input.urlbar-input {
 }
 /* primary toolbar (like tabs toolbar, addon bar etc.) */
 .toolbar-primary {
-    background: #0d0d0d !important;
+    background: #111111 !important;
     height: 16px !important; 
     min-height: 0px !important;
     padding: 0px !important;
@@ -180,7 +180,7 @@ html|input.urlbar-input {
 scrollbar {
     -moz-appearance: none !important;
     border: none !important;
-    background: #0d0d0d !important;
+    background: #111111 !important;
     box-shadow: none !important;
 }
 /* vertical scrollbar */
@@ -195,7 +195,7 @@ scrollbar[orient="horizontal"] {
 scrollbar thumb {
     -moz-appearance: none !important;
     border: none !important;
-    background: #666 !important;
+    background: #444 !important;
     border-radius: 0px !important;
 }
 /* scrollbar up/down arrow buttons */
@@ -222,7 +222,7 @@ toolbarbutton:hover,           /* toolbar button */
 #identity-box:hover,           /* identity box */
 scrollbar thumb:hover,         /* scrollbar handle */
 scrollbar thumb:active { 
-    background: #368 !important;
+    background: #4a8bcb !important;
     box-shadow: none !important;
     transition-duration: 0.1s !important;
 }

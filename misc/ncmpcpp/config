@@ -292,7 +292,7 @@ song_window_title_format = "{%a ----- }{%t}|{%f}"
 ##
 #
 #song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
-song_columns_list_format = "(3f)[blue]{nrE} (40)[white]{t|f} (20)[blue]{aE} (35)[white]{bE} (5f)[blue]{lr}"
+song_columns_list_format = "(3f)[white]{nrE} (40)[blue]{t|f} (20)[white]{aE} (35)[blue]{bE} (5f)[white]{lr}"
 #
 ##### various settings #####
 #
@@ -534,7 +534,7 @@ main_window_highlight_color = "default"
 progressbar_color = "blue"
 #
 #progressbar_elapsed_color = "default"
-progressbar_elapsed_color = "default"
+progressbar_elapsed_color = "blue"
 #
 #statusbar_color = "default"
 statusbar_color = "default"

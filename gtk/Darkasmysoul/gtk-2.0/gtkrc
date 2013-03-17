@@ -1,4 +1,4 @@
-gtk_color_scheme="bg_color: #0d0d0d"
+gtk_color_scheme="bg_color: #111111"
 
 style "default" {
     bg[ACTIVE]         = "#383838"
@@ -17,7 +17,7 @@ style "default" {
     base[INSENSITIVE]  = "#101010"
     base[NORMAL]       = "#101010"
     base[PRELIGHT]     = "#484848"
-    base[SELECTED]     = "#092980"
+    base[SELECTED]     = "#527699"
 
     text[ACTIVE]       = "#ffffff"
     text[INSENSITIVE]  = "#888888"

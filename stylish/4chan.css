@@ -1,14 +1,255 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 @-moz-document domain("4chan.org") {
-/* Inverse colors of captcha */
-/*
-.captchaimg > img {
-    border: none !important;
-    filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filters" color-interpolation-filters="sRGB"><feColorMatrix values="0.09 -0.87 0 0 0.87 0.1 -0.87 0 0 0.87 0.1 -0.87 0 0 0.87 0 0 0 1 0" /></filter></svg>#filters') !important;
+/* bloat */
+body > div:not(.dialog):not(.navLinks), /* every div which is direct descendant of body */
+hr, /* horizontal lines */
+.mobile, /* some mobile stuff */
+form[action="https://sys.4chan.org/g/post"] { /* form used for posting */
+    display: none !important; 
 }
-a#showQR { display:none !important; }
-*/
-div#qr {
-    max-width: 300px !important;
+body {
+    padding: 0 !important;
+    margin: 10px !important;
+    background: #111111 !important;
+    color: #ffffff !important;
+    font-family: dejavu sans !important;
+    font-size: 14px !important;
+}
+a {
+    color: #77aadd !important;
+    text-decoration: none !important;
+}
+a:hover {
+    color: #ffffff !important;
+}
+input, textarea {
+    background: inherit !important;
+    color: inherit !important;
+}
+#boardNavDesktop { /* Navigation panel with links to boards */
+    padding: 0 !important; 
+    margin: 0 !important;
+    background: transparent !important;
+    color: inherit !important;
+    font-size: 10px !important;
+    display: block !important;
+}
+#boardNavDesktopFoot { /* bottom board navigation */
+    background: #f00 !important;
+    color: inherit !important;
+    font-size: 10px !important;
+    display: none !important;
+}
+.navLinks { /* navigation links */
+    padding: 0 !important; 
+    margin: 0 !important;
+    background: transparent !important;
+    float: right !important;
+}
+.navLinksBot { /* bottom navigation links */
+    display: none !important; 
+}
+#imgControls { /* controls for image expanding */
+    background: transparent !important; 
+    display: block !important;
+}
+#delform { /* form for the thread */
+    padding: 0 !important; 
+    margin: 0 !important;
+}
+#delform > div:last-child { /* delete form and style selector */
+    display: none !important;
+}
+.thread { /* div containing posts */
+    padding: 0 !important; 
+    margin: 30px 0px 0px 0px !important;
+    background: transparent !important; 
+    border-top: 2px solid #77aadd !important;
+} 
+div.thread:first-child {
+    border-top: none !important;
+    margin-top: 0 !important;
+} 
+/* OP's post container */
+/* .opContainer { } */
+/* OP's post */
+/* .op { } */
+.replyContainer { /* reply container */
+    margin: 10px 0px 0px 0px !important;
+    padding: 0 !important;
+    width: 100% !important;
+    background: transparent !important;
+    position: relative !important;
+    display: inline-block;
+}
+.hide_reply_button { /* hide post button */
+    position: absolute !important;
+    top: 0px !important;
+    right: 0px !important;
+    padding: 0 !important; 
+    margin: 0 !important;
+}
+.hide_thread_button { /* hide thread button (seen on board page) */
+    float: right !important;
+}
+.stub { /* post stub (when post is hidden) */
+    position: static !important;   
+}
+.reply.post { /* reply (post other than OP's) */
+    background: transparent !important; 
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important; 
+}
+#qp { /* floating post div */
+    display: block !important;  
+    margin: 0 !important;
+    padding: 0 !important;
+    background: inherit !important;
+    border: 1px solid #77aadd !important;
+}
+.inline { /* div for post when inlined */
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 1px solid #77aadd !important;
+}
+.inlined { /* quote link for inlined posts */
+    background: #77aadd !important;
+    color: #111111 !important;
+    opacity: 1.0 !important;
+}
+.name { /* poster name */
+    color: #77aadd !important; 
+    font-weight: bold !important;
+}
+.subject { /* post subject */
+    color: #08ba9d !important;   
+}
+.postertrip { /* poster tripcode */
+    color: #89C4FF !important;
+    font-weight: bold !important;
+}
+.postInfo { /* post infor block (name, date, no...) */
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+/* backlinks */
+/* .postInfo > .container { } */
+.file { /* file block */
+    background: transparent !important;
+    margin: 0px 0px 0px 10px !important;
+}
+.fileInfo { /* file info */
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+}
+.fileThumb { /* thumbnail */
+    margin: 0px 10px 0px 0px !important;
+    padding: 0 !important;
+}
+.postMessage { /* post message */
+    margin: 5px 0px 0px 15px !important;
+    padding: 0 !important;
+    background: transparent !important
+}
+.quote { /* greentext */
+    color: #5ccd6b !important
+}
+.postInfo > input { /* post checkbox for deleting */
+    position: absolute !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    margin: 0 !important;
+}
+/* post menu */
+#menu {
+    display: table!important;
+    background: inherit !important;
+}
+#menu * {
+    background: inherit !important;
+}
+#overlay { /* overlay dimming the page, contains div with settings */
+    display: block !important;
+}
+#options { /* options div */
+    background: inherit !important;
+}
+#qr { /* floating quick reply dialog */
+    background: inherit !important;
+    border: 1px solid #77aadd !important;
+}
+#qr .move { /* qr "handle" */
+    background: inherit !important;
+    font-size: 10px !important;
+    height: 12px !important;
+    padding: 0 !important;
+}
+#qr #autohide { /* auto-hide checkbox */
+    margin: 0px 0px 0px 10px !important;
+    vertical-align: middle !important;
+}
+#qr .close { /* qr close "button" */
+    font-size: 12px !important;
+    font-weight: bold !important;
+    position: relative !important;
+    top: -1px !important;
+    right: 1px !important;
+}
+#dump:hover { /* dump button */
+    background: #77aadd !important;  
+}
+.captchaimg > img { /* image with captcha */
+    filter: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='filters' color-interpolation-filters='sRGB'><feColorMatrix values='0.066667 -0.466667 0 0 0.466667 0.066667 -0.666667 0 0 0.666667 0.066667 -0.866667 0 0 0.866667 0 0 0 1 0' /></filter></svg>#filters") !important;
+}
+.captchaimg { /* container for captcha */
+    background: transparent !important; 
+    outline: none !important;
+}
+/* hide name/trip when name field not hovered */
+#qr input[name="name"] {
+    color: #111111 !important;
+}
+#qr input[name="name"]:hover {
+    color: inherit !important;
+}
+#watcher, /* thread watcher */
+#updater:hover { /* thread updater UI */
+    background: inherit !important;
+    border: 1px solid #77aadd !important;
+}
+#updater .new { /* updater new posts number when there are new posts */
+    background: #4a8bcb !important;
+}
+/* code blocks stuff */
+.prettyprint { /* code blocks */
+    background: transparent !important;
+    border: 1px solid #77aadd !important;
+}
+.kwd { /* keyword */
+    color: #d98e36 !important;
+}
+.typ { /* type */
+    color:  #5588ff !important;
+}
+.pun { /* punctuation */
+    color: #4a8bcb !important
+}
+.pln { /* plain text */
+    color: inherit !important;
+}
+.com { /* comment */
+    color: #888888 !important;
+}
+.lit { /*literal */
+    color: #77aadd !important;
+}
+.str { /* string */
+    color: #cd5c5c !important;
 }
 }
