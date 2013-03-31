@@ -176,46 +176,81 @@ html|input.urlbar-input {
     list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAYAAAAbvf3sAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAWAAAAFgBeNpLYgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABuSURBVCiRndK7DYNAEEXRhYDMuSugBBdBE1ThJtyEq3ARlEAFzslIOERIK7QImCtNdp80v4R0sVr8rogPfDA7ESv0+Ms4kl8YFNiLT3yxlOQ80OCN6UjMAx3GM3GjTneJtBQaOrzW8OFCr1F8vhV3IBreXlsNSwAAAABJRU5ErkJggg==") !important;
     -moz-image-region: rect(0px, 12px, 14px, 0px) !important;
 }
-/* scrollbar */
+/* tab groups button */
+#tabview-button {
+    list-style-image: url("file:///tmp/21.png") !important;
+    -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
+    background: transparent !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    border: none !important;
+    -moz-appearance: none !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 16px !important;
+}
+/* scrollbar
+Notes:
+    xul scrollbar layout:
+
+    <scrollbar>
+      <xul:scrollbarbutton type="decrement"/>
+        <xul:slider flex="1">
+          <xul:thumb/>
+        </xul:slider>
+      <xul:scrollbarbutton type="increment"/>
+    </scrollbar>
+
+    scrollbar has an attribute "orient" 
+    which can be "vertical" or "horizontal"
+    scrollbarbutton has an attribute "type"
+    which can be "increment" or "decrement"
+    
+*/
+
 scrollbar {
     -moz-appearance: none !important;
-    border: none !important;
-    background: #111111 !important;
     box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 /* vertical scrollbar */
 scrollbar[orient="vertical"] { 
     width: 6px !important; 
+    background-position: bottom !important;
 }
 /* horizontal scrollbar */
 scrollbar[orient="horizontal"] { 
     height: 6px !important;
+    background-position: right !important;
 }
 /* scrollbar handle */
 scrollbar thumb {
     -moz-appearance: none !important;
     border: none !important;
-    background: #444 !important;
-    border-radius: 0px !important;
+    background: #444444 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
-/* scrollbar up/down arrow buttons */
-scrollbar[orient="horizontal"] scrollbarbutton {
-    min-height: 6px !important;
-    min-width: 10px !important;
+/* scrollbar up/down buttons */
+scrollbarbutton { 
+    background: #0f0 !important;
+    display: none !important;
 }
-scrollbar[orient="vertical"] scrollbarbutton {
-    min-width: 6px !important;
-    min-height: 10px !important;
-}
-scrollbarbutton {
+/* scrollbar slider */
+scrollbar slider {
     background: transparent !important;
 }
-
+scrollbar, /* scrollbars corner */
+scrollcorner {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABLSURBVAiZbcyxCQAxDATBtVGiUE2oEvdfgBq5ROCPzIPxpcPtWGttSVQV3c3ZlIS7k5mY2Q9VxQtnd/PCEREbwMzITNwdSczTvJ8f7CAp+bicUDIAAAAASUVORK5CYII=") !important;
+}
 /* hover background color */
 #appmenu-toolbar-button:hover, /* menu button */
 .tabbrowser-tab:hover,         /* tab */
 toolbarbutton:hover,           /* toolbar button */
 .tabs-newtab-button:hover,     /* new tab button */
+#tabview-button:hover,          /* tab grups button */
 #new-tab-button:hover,
 .scrollbutton-up:hover,        /* scrollbuttons */
 .scrollbutton-down:hover,

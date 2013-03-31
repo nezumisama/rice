@@ -292,7 +292,7 @@ song_window_title_format = "{%a ----- }{%t}|{%f}"
 ##
 #
 #song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
-song_columns_list_format = "(3f)[white]{nrE} (40)[blue]{t|f} (20)[white]{aE} (35)[blue]{bE} (5f)[white]{lr}"
+song_columns_list_format = "(3f)[blue]{nrE} (40)[magenta]{t|f} (15)[blue]{aE} (45)[magenta]{bE} (5f)[blue]{lr}"
 #
 ##### various settings #####
 #
@@ -309,7 +309,7 @@ song_columns_list_format = "(3f)[white]{nrE} (40)[blue]{t|f} (20)[white]{aE} (35
 #playlist_shorten_total_times = "no"
 #
 #playlist_separate_albums = "no"
-playlist_separate_albums = "yes"
+playlist_separate_albums = "no"
 #
 #playlist_display_mode = "classic" (classic/columns)
 playlist_display_mode = "columns"
@@ -338,9 +338,12 @@ playlist_editor_display_mode = "columns"
 ## be used to build 'empty' part of progressbar.
 ##
 #progressbar_look = "=>"
-progressbar_look = "██░"
+#progressbar_look = "██░"
+#progressbar_look = "━╋━"
+progressbar_look = "─┼─"
+
 #
-#progressbar_boldness = "yes"
+progressbar_boldness = "no"
 #
 #default_place_to_search_in = "database" (database/playlist)
 #
@@ -470,7 +473,7 @@ mouse_support = "yes"
 mouse_list_scroll_whole_page = "no"
 #
 #empty_tag_marker = "<empty>"
-empty_tag_marker = "¯\_(ツ)_/¯"
+empty_tag_marker = "***"
 #
 #tags_separator = " | "
 #
@@ -504,7 +507,7 @@ empty_tag_marker = "¯\_(ツ)_/¯"
 colors_enabled = "yes"
 #
 #empty_tag_color = "cyan"
-empty_tag_color = "magenta"
+empty_tag_color = "red"
 #
 #header_window_color = "default"
 header_window_color = "default"
@@ -522,16 +525,16 @@ state_flags_color = "default"
 main_window_color = "white"
 #
 #color1 = "white"
-color1 = "default"
+color1 = "green"
 #
 #color2 = "green"
-color2 = "default"
+color2 = "green"
 #
 #main_window_highlight_color = "yellow"
 main_window_highlight_color = "default"
 #
 #progressbar_color = "default"
-progressbar_color = "blue"
+progressbar_color = "magenta"
 #
 #progressbar_elapsed_color = "default"
 progressbar_elapsed_color = "blue"
