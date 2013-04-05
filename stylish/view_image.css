@@ -1,5 +1,43 @@
 @namespace url(http://www.w3.org/1999/xhtml);
-/* Note: this works with the pic style - checkerboard extension. */
-body.picstyle_body {
-    background: #0d0d0d url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QATABMAExiqncoAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEeECACiH5KswAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAARUlEQVQI1y3JsQ1AYBhF0YstvjHc/k8kRjCDpcyglOhM8AxgA1tonPagvuoEoM5DVV3AXlVPkrP7ZwQOYO3VluQGFmD7ABCvECJw2i5KAAAAAElFTkSuQmCC") repeat !important;
+@namespace svg "http://www.w3.org/2000/svg";
+/*  Note: this works with the pic style - checkerboard extension 
+    (https://addons.mozilla.org/en-us/firefox/addon/pic-style-checkerboard/).
+    
+    The structure is body.picstyle_body > img.picstyle_img.
+*/
+.picstyle_body {
+    /*  Why these colors?
+        I would set something dark.
+        Hovever, sometimes, I get images with transparent background and 
+        dark details (like fonts), which is hard to see on a dark background.
+        So I set colors with luminance around 50%, as an optimal compromise 
+        for readability of dark and bright details on such images.
+    */
+    background-repeat: repeat !important;
+    background-color: #997283 !important;
+    background-size: 140px 140px !important; /* floor(sqrt(2)*gradient_width) */
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 50px, #6f5878 50px, #6f5878 99px) !important;
+}
+.picstyle_img {
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+.picstyle_img:hover {
+    outline: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+/*  Svg images.
+    Actually, this isn't a "view_image" page per se, since svg are seperate documents.
+    This doesn't require the extension mentioned above of course. 
+    To style only images viewed ona separate page, I'm using a regexp here. 
+    This should work most of the time, though it's not perfect. 
+*/
+@-moz-document regexp(".*\.svg$") { /* url ends with ".svg" */
+svg|svg { /* document root */
+    background-repeat: repeat !important;
+    background-color: #997283 !important;
+    background-size: 140px 140px !important;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 50px, #6f5878 50px, #6f5878 99px) !important;
+    outline: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
 }

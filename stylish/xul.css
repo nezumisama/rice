@@ -244,7 +244,81 @@ scrollbar slider {
 scrollbar, /* scrollbars corner */
 scrollcorner {
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABLSURBVAiZbcyxCQAxDATBtVGiUE2oEvdfgBq5ROCPzIPxpcPtWGttSVQV3c3ZlIS7k5mY2Q9VxQtnd/PCEREbwMzITNwdSczTvJ8f7CAp+bicUDIAAAAASUVORK5CYII=") !important;
+    background-size: 6px 6px !important;
 }
+/*  
+    The following code is a hack working around bug: 
+    https://bugzilla.mozilla.org/show_bug.cgi?id=401213
+    - scrollbars are scaled with the page content when you use zoom.
+    The way this works is that media querries are used to determine 
+    the zoom level (ratio between css pixels and device pixels). 
+    Firefox has 8 enlargement zoom levels and 5 reduction ones, when 
+    using ctrl + +/ctrl + - shortcuts, zoom commands from menu, zoom 
+    toolbar buttons. Ctrl + scroll uses different steps (and more).
+    I found the ratios for the zoom levels with percision of 2 digits 
+    after decimal point. Now for each zoom level, the scrollbars 
+    width and height (and background size) are fixed (lowered
+    for enlargement, increased for reduction), as to get the right
+    amount of device pixels. This works exactly for those exact zoom 
+    levels, but not others. It will hovewer always at least minimize 
+    the amount the scrollbars are resized.
+*/
+
+/* Enlagrement */
+@media (min-resolution: 1.09dppx) {
+scrollbar[orient="vertical"] { width: 5.505px !important; }
+scrollbar[orient="horizontal"] { height: 5.505px !important; }
+scrollbar, scrollcorner { background-size: 5.505px 5.505px !important; } }
+@media (min-resolution: 1.19dppx) {
+scrollbar[orient="vertical"] { width: 5.042px !important; }
+scrollbar[orient="horizontal"] { height: 5.042px !important; }
+scrollbar, scrollcorner { background-size: 5.042px 5.042px !important; } }
+@media (min-resolution: 1.32dppx) {
+scrollbar[orient="vertical"] { width: 4.545px !important; }
+scrollbar[orient="horizontal"] { height: 4.545px !important; }
+scrollbar, scrollcorner { background-size: 4.545px 4.545px !important; } }
+@media (min-resolution: 1.5dppx) {
+scrollbar[orient="vertical"] { width: 4px !important; }
+scrollbar[orient="horizontal"] { height: 4px !important; }
+scrollbar, scrollcorner { background-size: 4px 4px !important; } }
+@media (min-resolution: 1.71dppx) {
+scrollbar[orient="vertical"] { width: 3.509px !important; }
+scrollbar[orient="horizontal"] { height: 3.509px !important; }
+scrollbar, scrollcorner { background-size: 3.509px 3.509px !important; } }
+@media (min-resolution: 2dppx) {
+scrollbar[orient="vertical"] { width: 3px !important; }
+scrollbar[orient="horizontal"] { height: 3px !important; }
+scrollbar, scrollcorner { background-size: 3px 3px !important; } }
+@media (min-resolution: 2.39dppx) {
+scrollbar[orient="vertical"] { width: 2.51px !important; }
+scrollbar[orient="horizontal"] { height: 2.51px !important; }
+scrollbar, scrollcorner { background-size: 2.51px 2.51px !important; } }
+@media (min-resolution: 3dppx) {
+scrollbar[orient="vertical"] { width: 2px !important; }
+scrollbar[orient="horizontal"] { height: 2px !important; }
+scrollbar, scrollcorner { background-size: 2px 2px !important; } }
+/* Reduction */
+@media (max-resolution: 0.9dppx) {
+scrollbar[orient="vertical"] { width: 6.667px !important; }
+scrollbar[orient="horizontal"] { height: 6.667px !important; }
+scrollbar, scrollcorner { background-size: 6.667px 6.667px !important; } }
+@media (max-resolution: 0.8dppx) {
+scrollbar[orient="vertical"] { width: 7.5px !important; }
+scrollbar[orient="horizontal"] { height: 7.5px !important; }
+scrollbar, scrollcorner { background-size: 7.5px 7.5px !important; } }
+@media (max-resolution: 0.67dppx) {
+scrollbar[orient="vertical"] { width: 8.955px !important; }
+scrollbar[orient="horizontal"] { height: 8.955px !important; }
+scrollbar, scrollcorner { background-size: 8.955px 8.955px !important; } }
+@media (max-resolution: 0.5dppx) {
+scrollbar[orient="vertical"] { width: 12px !important; }
+scrollbar[orient="horizontal"] { height: 12px !important; }
+scrollbar, scrollcorner { background-size: 12px 12px !important; } }
+@media (max-resolution: 0.3dppx) {
+scrollbar[orient="vertical"] { width: 20px !important; }
+scrollbar[orient="horizontal"] { height: 20px !important; }
+scrollbar, scrollcorner { background-size: 20px 20px !important; } }
+
 /* hover background color */
 #appmenu-toolbar-button:hover, /* menu button */
 .tabbrowser-tab:hover,         /* tab */

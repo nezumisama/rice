@@ -75,10 +75,6 @@ input[type="radio"]:active {
     background: #2a2a2a !important;
     color: #ffffff !important;
 }
-input[type="checkbox"]:-moz-focusring,
-input[type="radio"]:-moz-focusring {
-    border: 1px dotted #ffffff !important;
-}
 /* Buttons */
 input[type="button"],
 input[type="submit"],
@@ -107,7 +103,16 @@ button:hover:active {
     padding: inherit;
     border: 1px solid #444444;
 }
-/* Hide dotted borders on focus */
+/*  Border around selected elements. 
+    It's generally for accesibility, so you see what is active when
+    tabbing. When using the mouse it may be annoying. I decided to leave
+    this for now. */
+input[type="checkbox"]:-moz-focusring,
+input[type="radio"]:-moz-focusring {
+    border: 1px dotted #ffffff !important;
+}
+/*  Hide focus borders on everything.
+    Note: I can't seem to find a way to hide it for selects. */
 /*
 input::-moz-focus-inner,
 button::-moz-focus-inner {
@@ -142,7 +147,7 @@ input, button, textarea, select,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-    font-size: 12px;
+    font-size: inherit;
 }
 /* Meter bars */
 /*
