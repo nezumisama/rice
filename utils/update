@@ -1,21 +1,26 @@
 #!/bin/bash
 
 mydiff() {
-    diff -u $2 $1
+    diff -u $2 $1 | sed s/^\+/$'\E[1;32m'\+/ | sed s/^\-/$'\E[1;31m'\-/ | sed s/\$/$'\E[0m'/
+}
+idiff() {
+    mydiff $2 $1
 }
 
 cpcmd="cp -pi"
 diffcmd="mydiff"
+idiffcmd="idiff"
 
 cmd=$cpcmd
-help="Use option -d to diff instead of update."
+help="Use option -d to diff instead of update. Use -D for inverse diff."
 n=0
 mydir=`dirname $0`
-while getopts "hd" opt
+while getopts "hdD" opt
 do
  case $opt in
   h) echo -e "$help"; exit 0 ;;
   d) cmd=$diffcmd; let "n++" ;;
+  D) cmd=$idiffcmd; let "n++" ;;
  esac
 done
 while [[ "$n" -gt 0 ]]; do shift; let "n--"; done

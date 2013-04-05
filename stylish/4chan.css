@@ -1,11 +1,14 @@
+/*
+    TODO:
+    work on catalog more
+    svg images
+*/
 @namespace url(http://www.w3.org/1999/xhtml);
 @-moz-document domain("boards.4chan.org") {
 /* bloat */
 #id_css, .topad, #globalToggle, #togglePostForm, #toggleMsgBtn,
 body > div[style="text-align: center; margin-top: 10px;"],
-.boardBanner, /* board banner (with board name and text boards links) */
 .postingMode, /* posting mode */
-#globalMessage, /* global message */
 #absbot, /* some legal info */
 hr, /* horizontal lines */
 .mobile, /* some mobile stuff */
@@ -35,10 +38,20 @@ body {
     padding: 0 !important;
     margin: 10px 10px 30px 10px !important;
     background: #111111 !important;
-    color: #ffffff !important;
     font-family: liberation sans !important;
-    /* font-size: 12.875px !important; */
-    font-size: 12px !important;
+    /* Global font size. Other sizes are relative to this, 
+       so one only needs to change this. 
+       12.875px is 9pt on 103PPI.
+       Note: In CSS, 72pt = 96px always, regardless
+       of the physical screen PPI.
+    */
+    font-size: 12.875px !important;
+    /* font-size: 14.3px !important; */
+}
+/* foreground color */
+body, 
+.pages > strong {
+    color: #ffffff !important;
 }
 a, .pagelist > div input {
     color: #6089b3 !important;
@@ -48,15 +61,36 @@ a:hover, .pagelist > div input:hover {
     color: #ffffff !important;
     cursor: pointer !important;
 }
-input, textarea {
+input, textarea, select, option {
     background: inherit !important;
     color: inherit !important;
+}
+input[type="checkbox"] {
+    background: inherit !important;
+    border: 1px solid #333333 !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.5em 0 !important;
+}
+.stickyIcon { /* sticky (pin) icon */
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAASwQAAEsEBDdPHQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAB4SURBVBiVfdCxCYBADIXhJ4iV+2ij4Cq3k4W4gd3NYO8edm7w2+RQc5wPUoR8RRIBKtQGdKkvoQY4gSthD1qgByJPLqDzMJDnBDYPK+B4oWhryKPVQMK9P6YCFhuu1gfb+QNnQ4uh7BMCBkNzCQGqJU2SRkm7fnIDDkgpEW2bv5sAAAAASUVORK5CYII=") !important;
+    width: 0 !important;
+    height: 10px !important;
+    padding: 0 0 0 10px !important;
+    margin: 0 !important;
+}
+.closedIcon { /* closed (padlock) icon */
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABeSURBVBiVtY6xDcAgDAQ/WYCaVZjEo7AVNcukY45L85ZSRBFNLF3zPtkvQKYBA1hmOBOglDpwAQFUE856is1BeVxPindNfhEvUhLAkPvUD7EC6wDQxpw70n/i3PDmDf88qGSk4R9aAAAAAElFTkSuQmCC") !important;
+    width: 0 !important;
+    height: 10px !important;
+    padding: 0 0 0 10px !important;
+    margin: 0 !important;
 }
 .pagelist { /* page list */
     padding: 0 !important; 
     margin: 0 !important;
     border: none !important;
-    font-size: 12px !important;
+    font-size: inherit !important;
     float: none !important;
     background: inherit !important;
     width: 100% !important;
@@ -77,13 +111,7 @@ input, textarea {
     display: block !important;
     float: none !important;
     color: transparent !important;
-    font-size: 4px !important;
-}
-.pages > strong {
-    color: #ffffff !important;
-}
-.pages * {
-    font-size: 12px !important;
+    word-spacing: -0.5em !important;
 }
 .pagelist > div input {
     padding: 0 !important; 
@@ -103,24 +131,93 @@ input, textarea {
     left: 0 !important;
 }
 #boardNavDesktop { /* Navigation panel with links to boards */
-    padding: 0 !important; 
+    padding: 5px !important;
     margin: 0 !important;
     background: inherit !important;
     color: transparent !important;
-    font-size: 4px !important;
+    word-spacing: -0.5em !important;
     position: fixed !important;
     right: 30px !important;
-    top: 28px !important;
-    width: 50em !important;
+    top: 46px !important;
+    width: 16em !important;
     z-index: 2 !important;
     outline: 1px solid #6089b3 !important;
     visibility: hidden !important;
 }
-#boardNavDesktop > * {
-    font-size: 12px !important;
+#globalMessage { /* global message */
+    padding: 5px !important;
+    margin: 0 !important;
+    background: inherit !important;
+    position: fixed !important;
+    right: 30px !important;
+    top: 118px !important;
+    width: 30em !important;
+    z-index: 2 !important;
+    outline: 1px solid #6089b3 !important;
+    visibility: hidden !important;
+    text-align: center !important;
+    color: inherit !important;
 }
-#boardNavDesktop:hover {
-    visibility: visible !important;
+.boardBanner { /* board banner (with board name and text boards links) */
+    padding: 5px !important; 
+    margin: 0 !important;
+    background: inherit !important;
+    position: fixed !important;
+    right: 30px !important;
+    top: 28px !important;
+    z-index: 2 !important;
+    outline: 1px solid #6089b3 !important;
+    visibility: hidden !important;
+    display: block !important;
+    width: 400px !important;
+}
+.boardBanner > img {
+    margin: 0 auto !important;
+    border: 0 !important;
+    display: block !important;
+    opacity: 0.7 !important;
+}
+.boardTitle { /* board title */
+    letter-spacing: 0 !important;
+    font-size: 30px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "dejavu sans condensed" !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    position: absolute !important;
+    top: 33px !important;
+    left: 0 !important;
+    width: 100% !important;
+    text-shadow: #000000 3px 3px !important; 
+    text-align: center !important;
+}
+.boardSubtitle { /* board sub-title */
+    font-family: inherit !important;
+    font-size: 15px !important;
+    position: absolute !important;
+    top: 63px !important;
+    left: 0 !important;
+    width: 100% !important;
+    text-shadow: #000000 0 1px, #000000 0 -1px, #000000 1px 0, #000000 -1px 0 !important;
+    font-weight: bold !important;
+}
+#imgControls {
+    position: fixed !important;
+    right: 30px !important;
+    width: 120px !important;
+    top: 64px !important;
+    z-index: 2 !important;
+    outline: 1px solid #6089b3 !important;
+    visibility: hidden !important;
+}
+#imgControls:hover > label {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0 !important;
+}
+#imgControls:hover > #imageType {
+    width: 100px !important;
 }
 /* floating menu stuff */
 #boardNavDesktop::before {
@@ -134,7 +231,7 @@ input, textarea {
     margin: 0 !important;
     position: fixed !important;
     right: 2px !important;
-    top: 28px !important;
+    top: 46px !important;
     z-index: 2 !important;
     color: transparent !important;
     cursor: pointer !important;
@@ -150,7 +247,7 @@ input, textarea {
     margin: 0 !important;
     position: fixed !important;
     right: 2px !important;
-    top: 45px !important;
+    top: 64px !important;
     z-index: 2 !important;
     color: transparent !important;
     cursor: pointer !important;
@@ -166,7 +263,39 @@ input, textarea {
     margin: 0 !important;
     position: fixed !important;
     right: 2px !important;
-    top: 45px !important;
+    top: 64px !important;
+    z-index: 2 !important;
+    color: transparent !important;
+    cursor: pointer !important;
+}
+#globalMessage::before {
+    content: "" !important;
+    visibility: visible !important;
+    display: block !important;
+    background: right no-repeat url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAF/wAABf8ByXatVgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEDSURBVDiNpZMxTsNAEEWf13LHHaDHVdJwAiQ6Sm7iOlJqxDEo6ZA4QZqkCiXiEiARJeJReFZarOAk4ksudvxmZ2fnb6UyUAvcAVNgErEVsAQegfUvWs1fUjt149/aBJNyXhUnSMAzcB37vgJPwCLWV8AtcBnrF+AG+M7Vu6iwU2dqo9bql/oRTBP/dsF2KqhtcexZ0VKlPqj3RYxgcjst6jwC66hSwhfq+SDWBKs6T3HbRM/b4n5r4B14G0xpGyzANBWjWnC8MjtJJyTtVaI3CfSjOlaZXSV6h0E/5+aI5CZYgOXYGOvCG6NjHDNSucFeIx2y8icgcMYBK//7MZU66Tn/AIOfr7JFFiaXAAAAAElFTkSuQmCC") !important;
+    width: 16px !important;
+    height: 16px !important;
+    padding: 0 12px 0 0 !important;
+    margin: 0 !important;
+    position: fixed !important;
+    right: 2px !important;
+    top: 118px !important;
+    z-index: 2 !important;
+    color: transparent !important;
+    cursor: pointer !important;
+}
+.boardBanner::before {
+    content: "" !important;
+    visibility: visible !important;
+    display: block !important;
+    background: right no-repeat url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAZqxAAGasQEJBzoiAAAAB3RJTUUH3QQBECAqfVEq8AAAAUVJREFUOMulkz9LgmEUxX9X3yQTIkgEaWgwHNqcDFz6JH0PcY6+h59EiKAmN6HAoUkIhQhMKfU0dF4T/7R4xueec3nOveciaaFNPEuqY0iq+20diwQI4BN4BcZAHngEhvxhCNwD38AEKADnwBHu1JN0I6ki6UJSiTVIKrlWMbcnSYnrY+AhIvqSToCypDMgrc+AKTCIiHdJqWZJyANh8S1wDXwBc9ezQA7oSGrZdj5t8GLPH0DZ4kt2owyMrDlIJ1yxz5qkrnajK6lmbkVSPYmIp5Xuycq3t2Ge2o6IPtDPsCcSB2bojjMPbBey5mDbxQzQBpre/dTT3oUcMDW3CbQToOqEHQMDoGPy1jWaUwSugGqagwkgh6TlVR3+E6RTa5aEAtBwwgIYRcTbepSBosUNawj9qrYd050Hmw6s6W9vHNNe5/wDF8s3hrkx/DwAAAAASUVORK5CYII=") !important;
+    width: 16px !important;
+    height: 16px !important;
+    padding: 0 12px 0 0 !important;
+    margin: 0 !important;
+    position: fixed !important;
+    right: 2px !important;
+    top: 28px !important;
     z-index: 2 !important;
     color: transparent !important;
     cursor: pointer !important;
@@ -179,7 +308,7 @@ input, textarea {
     width: 16px !important;
     height: 16px !important;
     color: transparent !important;
-    font-size: 1px !important;
+    font-size: 0 !important;
     padding: 0 !important; 
     margin: 0 !important;
     position: fixed !important;
@@ -198,7 +327,7 @@ input, textarea {
     margin: 0 !important;
     position: fixed !important;
     right: 2px !important;
-    top: 63px !important;
+    top: 82px !important;
     z-index: 2 !important;
     color: transparent !important;
     cursor: pointer !important;
@@ -213,7 +342,7 @@ input, textarea {
     margin: 0 !important;
     position: fixed !important;
     right: 2px !important;
-    top: 63px !important;
+    top: 82px !important;
     z-index: 2 !important;
     color: transparent !important;
     cursor: pointer !important;
@@ -229,7 +358,7 @@ input, textarea {
     margin: 0 !important;
     position: fixed !important;
     right: 2px !important;
-    top: 81px !important;
+    top: 100px !important;
     z-index: 2 !important;
     color: transparent !important;
     cursor: pointer !important;
@@ -239,6 +368,8 @@ input, textarea {
 #boardNavDesktop::before,
 #imgControls::before,
 #ctrl::before,
+#globalMessage::before,
+.boardBanner::before,
 .navLinksBot > a[href=".././catalog"],
 .pagelist > .cataloglink > a,
 #content > .navLinks a[href="./catalog"],
@@ -251,6 +382,8 @@ input, textarea {
 #boardNavDesktop:hover::before,
 #imgControls:hover::before,
 #ctrl:hover::before,
+#globalMessage:hover::before,
+.boardBanner:hover::before,
 .navLinksBot > a[href=".././catalog"]:hover,
 .pagelist > .cataloglink > a:hover,
 #content > .navLinks a[href="./catalog"]:hover,
@@ -259,27 +392,12 @@ input, textarea {
     color: transparent !important;
     opacity: 1 !important;
 }
-#imgControls {
-    position: fixed !important;
-    right: 30px !important;
-    width: 120px !important;
-    top: 45px !important;
-    z-index: 2 !important;
-    outline: 1px solid #6089b3 !important;
-    visibility: hidden !important;
-}
-#imgControls:hover { 
+#boardNavDesktop:hover,
+#globalMessage:hover,
+#imgControls:hover,
+.boardBanner:hover {
     visibility: visible !important;
 }
-#imgControls:hover > label {
-    padding: 0 !important;
-    margin: 0 !important;
-    font-size: 0 !important;
-}
-#imgControls:hover > #imageType {
-    width: 100px !important;
-}
-
 #delform { /* form for the thread */
     padding: 0 !important; 
     margin: 0 !important;
@@ -291,7 +409,7 @@ input, textarea {
     border-top: 2px solid #6089b3 !important;
     position: relative !important;
 } 
-div.thread:first-child {
+.thread:first-child {
     border-top: none !important;
     margin-top: 0 !important;
 } 
@@ -299,7 +417,7 @@ div.thread:first-child {
 .opContainer { /* OP's post container */
     padding: 5px !important;
     position: relative !important;
-    background: #151515 !important;
+    background-image: repeating-linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.01) 2px, transparent 4px) !important;
     margin: 10px 0 0 0 !important;
     display: block !important;
 }
@@ -307,20 +425,18 @@ div.thread:first-child {
     margin: 0 !important;
 }
 .replyContainer:nth-child(odd) { /* odd posts */
-    background: #1a1a1a !important;
+    background-color: #121212 !important;
 }
-.hide_reply_button { /* hide post button */
+.hide_reply_button, /* hide post button */
+.stub > a:first-child > span, /* show post button */
+.hide_thread_button, /* hide thread button */
+.hidden_thread > a:first-child > span { /* show thread button */
     position: absolute !important;
     top: 5px !important;
     right: 5px !important;
     padding: 0 !important; 
     margin: 0 !important;
-}
-.hide_thread_button { /* hide thread button (seen on board page) */
     z-index: 2 !important;
-    position: absolute !important;
-    right: 5px !important;
-    top: 5px !important;
 }
 .summary { /* x posts omitted and y images */
     margin: 0 !important;
@@ -341,8 +457,12 @@ div.thread:first-child {
     width: 100% !important;
     overflow: visible !important;
 }
-.post[hidden] { /* hidden post */
+.post[hidden], /* hidden post */
+.hidden_thread ~ * { /* stuff after hidden thread stub */
     display: none !important;
+}
+.hidden_thread { /* hidden thread stub */
+    position: static !important;
 }
 .qphl { /* highlighted reply */
     outline: 1px solid #6089b3 !important;
@@ -404,7 +524,7 @@ div.thread:first-child {
 .fileInfo { /* file info */
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 8.58px !important;
+    font-size: 70% !important;
 }
 .fileThumb { /* thumbnail */
     margin: 0 15px 0 0 !important;
@@ -436,22 +556,27 @@ div.thread:first-child {
     background: inherit !important;
     border: 1px solid #6089b3 !important;
 }
+#qr input:not([type="checkbox"]), 
+#qr textarea {
+    border: none !important;
+    -moz-appearance: none !important;
+}
+#qr input[type="file"] {
+    width: 70% !important;
+}
+#qr input[type="submit"] {
+    width: 30% !important;
+}
 #qr .move { /* qr "handle" */
     background: inherit !important;
-    font-size: 10px !important;
-    height: 13px !important;
-    padding: 0 !important;
+    padding: 2px !important;
 }
 #qr #autohide { /* auto-hide checkbox */
     margin: 0px 0px 0px 10px !important;
     vertical-align: middle !important;
 }
 #qr .close { /* qr close "button" */
-    font-size: 12px !important;
     font-weight: bold !important;
-    position: relative !important;
-    top: -1px !important;
-    right: 1px !important;
 }
 #dump:hover { /* dump button */
     background: #6089b3 !important;  
@@ -464,8 +589,8 @@ div.thread:first-child {
     outline: none !important;
 }
 /* hide name/trip when name field not hovered */
-#qr input[name="name"] {
-    color: #111111 !important;
+#qr input[name="name"] { /* name field in qr */
+    color: transparent !important;
 }
 #qr input[name="name"]:hover {
     color: inherit !important;
@@ -490,6 +615,10 @@ div.thread:first-child {
 .prettyprint { /* code blocks */
     background: transparent !important;
     border: 1px solid #6089b3 !important;
+    margin: 0.5em 0 0.5em 0 !important;
+    padding: 0 !important;
+    white-space: pre-wrap !important;
+    vertical-align: middle !important;
 }
 .kwd { /* keyword */
     color: #d98e36 !important;
@@ -512,36 +641,17 @@ div.thread:first-child {
 .str { /* string */
     color: #cd5c5c !important;
 }
-a.useremail[href*="nezumi"]::after {
+a.useremail[href*="nezumi"]::before {
     content: url("data:image/png;base64,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");
     position: absolute;
     bottom: -3px;
-    right: 30px;
+    right: 15px;
     opacity: 0.3 !important;
 }
 }
 /* catalog */
 @-moz-document regexp("https?://boards.4chan.org/.*/catalog") {
 /* board banner (with board name and text boards links) */
-/*
-.boardBanner {
-    display: block !important;
-    text-align: left !important;
-}
-.boardBanner > .title {
-    float: left !important;
-    margin-right: 10px !important
-}
-.boardTitle {
-    font-size: 34px !important;
-    letter-spacing: 0 !important;
-}
-.boardSubtitle {
-    font-size: 17px !important;
-    text-indent: 10px !important;
-    margin-top: 5px !important;
-}
-*/
 #topnav { /* container for boardNavDesktop */
     background: inherit !important;
 }
@@ -630,13 +740,22 @@ a.useremail[href*="nezumi"]::after {
     padding: 0 !important;
 }
 .meta { /* R: xxx /  I: xxx */
-    font-size: 8.58px !important;
+    font-size: 70% !important;
+}
+.threadIcons { /* container for icons like pinned */
+    background: #000 !important;
+    height: 13px !important;
+    width: 24px !important;
+    margin: 0 0 0 -24px  !important;
+    text-align: center !important;
+    padding: 0 0 1px 0 !important;
+    opacity: 0.75 !important;
 }
 #ctrl { /* thumbnails settings in catalog */
     position: fixed !important;
     right: 30px !important;
-    width: 200px !important;
-    top: 45px !important;
+    width: 20em !important;
+    top: 64px !important;
     z-index: 2 !important;
     outline: 1px solid #6089b3 !important;
     visibility: hidden !important;
@@ -658,11 +777,6 @@ a.useremail[href*="nezumi"]::after {
     padding: 0 !important;
 }
 #filters-ctrl {
-/*
-    position: absolute !important;
-    right: 0 !important;
-    top: 0 !important;
-*/
     float: right !important;
 }
 #qf-ctrl {
@@ -672,9 +786,9 @@ a.useremail[href*="nezumi"]::after {
     float: left !important;
 }
 #qf-box { /* search input box */
-    width: 7em !important;
+    width: 10em !important;
     padding: 0 !important;
     margin: 0 0.5em 0 1em !important;
-    outline: 1px solid #6089b3 !important;
+    outline: 1px solid #ffffff !important;
 }
 }

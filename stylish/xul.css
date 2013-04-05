@@ -178,7 +178,7 @@ html|input.urlbar-input {
 }
 /* tab groups button */
 #tabview-button {
-    list-style-image: url("file:///tmp/21.png") !important;
+    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QQBDi03vUG2HgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAoElEQVQoz62SsRHCMAxFnzjfeQlokiqMl0HYMDRhCdOIAuUQQokb1Fi2/G35fYuqVuACVN6hNj6B1XJfb8BabPEGjHxCgTsw29zXF2AudtIIXINQ3C2xXk/kIXSiWM9LEKitNdceLm+SwMFDOIITNz8sPzsgkrW6UR0SkoMTiXvCF9UpITntgNql2qXbE/J3ofdx+2bROwk/KvVxz7sff1+WUTSpCoQQzgAAAABJRU5ErkJggg==") !important;
     -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
     background: transparent !important;
     border-radius: 0px !important;
@@ -261,3 +261,16 @@ scrollbar thumb:active {
     box-shadow: none !important;
     transition-duration: 0.1s !important;
 }
+/*
+button {
+    background: transparent !important;
+    border: 1px solid #444 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    text-shadow: none !important;
+}
+button:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+*/

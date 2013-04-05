@@ -1,20 +1,167 @@
+/*  TODO:
+    Disabled elements.
+    Meter bars.
+*/
 @namespace url(http://www.w3.org/1999/xhtml);
-input, textarea, option {
-    -moz-appearance: none !important;
-    background: #fff;
-    color: #000;
-    border: none !important;
-}
-input[type="search"] {
-    border: 1px solid #000 !important;
-}
-input[type="checkbox"] {
-    -moz-appearance: checkbox !important;
-}
+@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+/*  Note: normally, Firefox uses the native drop-down list widget (the Gtk2 one on X11) 
+    for select. Properties changing the way the object looks like background don't work then.
+    Hovewer if either -moz-appearance is set to anything other than default (menulist), 
+    or border or border-radius are set, or in  other circumstances I don't know of, 
+    the element is rendered differently. In this case, Firefox renders an ugly drop-down marker.
+    This marker is styled by some properties of xul scrollbar (width and display at least).
+    Also, for some values of -moz-appearance (none for example), things like background 
+    can be set. */
 select {
+    /* Use the non-native look to alow styling. */
+    -moz-appearance: none !important;
+    border: none;
+    /* Uncoment this to force native drop-down list */
+    /*
     -moz-appearance: menulist !important;
-    color: #fff !important;
-    background: #000 !important;
-    border: none !important;
-    border-radius: 0px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    */
 }
+/*  Replace the ugly drop arrow button on select with a nice one */ 
+select > button {
+/*  Note: the attribute fill="<color>" controls the color of the image. 
+    It's in hex notation, but one needs to replace # with %23. 
+    For example to get  blue (#f00), that part should look like this: fill="%23f00" */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="10" width="20" version="1.1"><g><path fill="%23ffffff" d="M0%2C0%2C10%2C10%2C20%2C0z"/></g></svg>') !important;
+    background-size: auto 30% !important;
+    background-color: transparent;
+    border: none;
+}
+/*  This for some reason controls the drop-marker button's width.
+    Also, if you put display: none !important; here, the button
+    won't be displayed. */
+select > xul|scrollbar[orient="vertical"] {
+    width: 20px !important;
+}
+option, select {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+option:disabled, optgroup:disabled {
+    color: #2a2a2a;
+    text-shadow: #888 1px 1px;
+}
+/*  Some websites (google, for example) assume (incorectly) that text boxes have 
+    a light bacground and dark text, which is untrue if you're using a dark theme.
+    That is, they set a color or background, but not the other.
+    The effect is that, for example, google has white background set, but no color, 
+    so I get white text on white background.
+    So I "fix" this by setting the colors those websites assume. */
+input, textarea {
+    background: #ffffff;
+    color: #000000;
+    /*  If the default appearance is set (native control), only color can be set, 
+        so in order to control the background, this needs to be set to none. */  
+    -moz-appearance: none !important;
+    border: solid #444444 1px;
+}
+/*  Style for checkboxes. This has to have important because the browser css 
+    has important for these rules. */
+input[type="checkbox"],
+input[type="checkbox"]:hover:active,
+input[type="checkbox"]:active,
+input[type="radio"],
+input[type="radio"]:hover:active,
+input[type="radio"]:active {
+    /* -moz-appearance: checkbox !important; */
+    /* -moz-appearance: radio !important; */
+    border: solid #444444 1px !important;
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+}
+input[type="checkbox"]:-moz-focusring,
+input[type="radio"]:-moz-focusring {
+    border: 1px dotted #ffffff !important;
+}
+/* Buttons */
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+    -moz-appearance: none !important;  
+    background: #2a2a2a;
+    color: #ffffff;  
+    padding: 0;
+    border: 1px solid #444444;
+}
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+    background: #444444;
+}
+input[type="button"]:active,
+input[type="button"]:hover:active,
+input[type="submit"]:active,
+input[type="submit"]:hover:active,
+input[type="reset"]:active,
+input[type="reset"]:hover:active,
+button:active,
+button:hover:active {
+    padding: inherit;
+    border: 1px solid #444444;
+}
+/* Hide dotted borders on focus */
+/*
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: none !important;
+}
+*/
+/* File upload */
+/* Fix https://bugzilla.mozilla.org/show_bug.cgi?id=52500 */
+input[type="file"] > input[type="text"] {
+    width: calc(100% - 7em - 3px) !important;
+}
+input[type="file"] > input[type="button"] {
+    width: 7em !important;
+    margin-left: 3px !important;
+}
+/* Progress bars */
+progress {
+    -moz-appearance: none !important;
+    background: #111111;
+    border: 1px solid #444444;
+}
+/* Active part of the progressbar */
+::-moz-progress-bar {
+    background: #444444;
+}
+/* Fieldset (frame around elements dividing forms in sections */
+fieldset {
+    border: 1px solid #444444;
+}
+/* Font size */
+input, button, textarea, select,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    font-size: 12px;
+}
+/* Meter bars */
+/*
+meter {
+  -moz-appearance: none;
+  background: -moz-linear-gradient(top, #e6e6e6, #e6e6e6, #eeeeee 20%, #cccccc 45%, #cccccc 55%);
+}
+::-moz-meter-bar {
+  -moz-appearance: meterchunk;
+  height: 100%;
+  width: 100%;
+}
+:-moz-meter-optimum::-moz-meter-bar {
+  background: -moz-linear-gradient(top, #ad7, #ad7, #cea 20%, #7a3 45%, #7a3 55%);
+}
+:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: -moz-linear-gradient(top, #fe7, #fe7, #ffc 20%, #db3 45%, #db3 55%);
+}
+:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: -moz-linear-gradient(top, #f77, #f77, #fcc 20%, #d44 45%, #d44 55%);
+}
+*/
