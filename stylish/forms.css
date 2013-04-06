@@ -40,11 +40,11 @@ select > xul|scrollbar[orient="vertical"] {
     width: 20px !important;
 }
 option, select {
-    background-color: #2a2a2a;
+    background-color: #202020;
     color: #ffffff;
 }
 option:disabled, optgroup:disabled {
-    color: #2a2a2a;
+    color: #202020;
     text-shadow: #888 1px 1px;
 }
 /*  Some websites (google, for example) assume (incorectly) that text boxes have 
@@ -72,7 +72,7 @@ input[type="radio"]:active {
     /* -moz-appearance: checkbox !important; */
     /* -moz-appearance: radio !important; */
     border: solid #444444 1px !important;
-    background: #2a2a2a !important;
+    background: #202020 !important;
     color: #ffffff !important;
 }
 /* Buttons */
@@ -81,7 +81,7 @@ input[type="submit"],
 input[type="reset"],
 button {
     -moz-appearance: none !important;  
-    background: #2a2a2a;
+    background: #202020;
     color: #ffffff;  
     padding: 0;
     border: 1px solid #444444;
@@ -143,12 +143,13 @@ fieldset {
     border: 1px solid #444444;
 }
 /* Font size */
+/*
 input, button, textarea, select,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-    font-size: inherit;
 }
+*/
 /* Meter bars */
 /*
 meter {

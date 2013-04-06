@@ -44,7 +44,7 @@ html|input.urlbar-input {
     background: transparent !important;
     color: #fff !important;
     padding: 0px 1px 0px 1px !important;
-    margin: 0px 0px -0px -8px !important;
+    margin: 0px 0px 0px -8px !important;
     border-radius: 0px !important;
     border: none !important;
     font-family: sans-serif !important;
@@ -123,7 +123,10 @@ html|input.urlbar-input {
     margin: 0px !important;
     width: 16px !important;
     /* icon (white plus symbol) */
+    /*
     list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAfAAAAHwBFQ/t5AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABzSURBVCiR1ZLLDYAgEEQfxhIsgi60IIvAHixIu7AIehgvEJFANHjyJZMs+0lmwxpJtNBX8jYI4Ai6I6kkpwtX6umafEL7YNxxAOYkP2WxS94r4KNnq/fYTztGqx5YMntjiHdgS2oe+NN3mMqtPp5cbfCRE01Doi72BnyUAAAAAElFTkSuQmCC") !important;
+    */
+    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABmJLR0QAEQARABHTl+z4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QQGDAAuZ1Oo5gAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAJ0lEQVQoz2NgGPrgPxTgkmci12CyNTKiOw+vYkZGRoptHEKBM4QAAF+JE/wmy/A8AAAAAElFTkSuQmCC") !important;
     -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
 }
 .tabs-newtab-button:hover, #new-tab-button:hover {
@@ -178,14 +181,13 @@ html|input.urlbar-input {
 }
 /* tab groups button */
 #tabview-button {
-    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QQBDi03vUG2HgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAoElEQVQoz62SsRHCMAxFnzjfeQlokiqMl0HYMDRhCdOIAuUQQokb1Fi2/G35fYuqVuACVN6hNj6B1XJfb8BabPEGjHxCgTsw29zXF2AudtIIXINQ3C2xXk/kIXSiWM9LEKitNdceLm+SwMFDOIITNz8sPzsgkrW6UR0SkoMTiXvCF9UpITntgNql2qXbE/J3ofdx+2bROwk/KvVxz7sff1+WUTSpCoQQzgAAAABJRU5ErkJggg==") !important;
+    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABmJLR0QAEQARABHTl+z4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QQGCy0J5zxR5wAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQoz2P8////fwYkwMjIyMjAwMCALo4OmBjIBPTXSH/ASCj0cIXyEArVkaARABt6EA86GPt2AAAAAElFTkSuQmCC") !important;
     -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
-    background: transparent !important;
     border-radius: 0px !important;
     box-shadow: none !important;
     border: none !important;
     -moz-appearance: none !important;
-    padding: 0px !important;
+    padding: 0 !important;
     margin: 0px !important;
     width: 16px !important;
 }
