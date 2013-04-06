@@ -26,18 +26,3 @@
 .picstyle_img:hover {
     outline: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
-/*  Svg images.
-    Actually, this isn't a "view_image" page per se, since svg are seperate documents.
-    This doesn't require the extension mentioned above of course. 
-    To style only images viewed ona separate page, I'm using a regexp here. 
-    This should work most of the time, though it's not perfect. 
-*/
-@-moz-document regexp(".*\.svg$") { /* url ends with ".svg" */
-svg|svg { /* document root */
-    background-repeat: repeat !important;
-    background-color: #997283 !important;
-    background-size: 140px 140px !important;
-    background-image: repeating-linear-gradient(45deg, transparent, transparent 50px, #6f5878 50px, #6f5878 99px) !important;
-    outline: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-}

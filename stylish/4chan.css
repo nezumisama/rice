@@ -134,13 +134,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5px !important;
     margin: 0 !important;
     background: inherit !important;
+    z-index: 3 !important;
     color: transparent !important;
     word-spacing: -0.5em !important;
     position: fixed !important;
     right: 30px !important;
     top: 46px !important;
     width: 16em !important;
-    z-index: 2 !important;
     outline: 1px solid #6089b3 !important;
     visibility: hidden !important;
 }
@@ -152,7 +152,8 @@ h1, h2, h3, h4, h5, h6 {
     right: 30px !important;
     top: 118px !important;
     width: 30em !important;
-    z-index: 2 !important;
+    z-index: 3 !important;
+    background: inherit !important;
     outline: 1px solid #6089b3 !important;
     visibility: hidden !important;
     text-align: center !important;
@@ -165,7 +166,8 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed !important;
     right: 30px !important;
     top: 28px !important;
-    z-index: 2 !important;
+    z-index: 3 !important;
+    background: inherit !important;
     outline: 1px solid #6089b3 !important;
     visibility: hidden !important;
     display: block !important;
@@ -210,6 +212,8 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2 !important;
     outline: 1px solid #6089b3 !important;
     visibility: hidden !important;
+    z-index: 3 !important;
+    background: inherit !important;
 }
 #imgControls:hover > label {
     padding: 0 !important;
@@ -401,6 +405,7 @@ h1, h2, h3, h4, h5, h6 {
 #delform { /* form for the thread */
     padding: 0 !important; 
     margin: 0 !important;
+    background: inherit !important; 
 }
 .thread { /* div containing posts */
     padding: 0 !important; 
@@ -433,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
 .hidden_thread > a:first-child > span { /* show thread button */
     position: absolute !important;
     top: 5px !important;
-    right: 5px !important;
+    right: 10px !important;
     padding: 0 !important; 
     margin: 0 !important;
     z-index: 2 !important;
@@ -489,17 +494,20 @@ h1, h2, h3, h4, h5, h6 {
     color: #111111 !important;
     opacity: 1.0 !important;
 }
-.name { /* poster name */
+.name, /* poster name */
+.post-author { /* poster name in catalog */
     color: #609eb3 !important; 
     font-weight: bold !important;
 }
 .capcode { /* Cap code (mod, admin) */
     color: #a83e3e !important;
 }
-.subject { /* post subject */
+.subject, /* post subject */
+.post-subject { /* post subject in catalog */
     color: #08ba9d !important;   
 }
-.postertrip { /* poster tripcode */
+.postertrip, /* poster tripcode */
+.post-tripcode { /* poster tripcode in catalog */
     color: #af93ba !important;
     font-weight: bold !important;
 }
@@ -756,10 +764,10 @@ a.useremail[href*="nezumi"]::before {
     right: 30px !important;
     width: 20em !important;
     top: 64px !important;
-    z-index: 2 !important;
+    background: inherit !important;
+    z-index: 3 !important;
     outline: 1px solid #6089b3 !important;
     visibility: hidden !important;
-    background: inherit !important;
     margin: 0 !important;
     padding: 2px !important;
 }
@@ -791,4 +799,18 @@ a.useremail[href*="nezumi"]::before {
     margin: 0 0.5em 0 1em !important;
     outline: 1px solid #ffffff !important;
 }
+#post-preview { /* floating post info shown when hovering over thumbanils */
+    background: inherit !important;
+    outline: 1px solid #6089b3 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 5px !important;
+}
+/*
+.post-teaser
+.post-last
+.admin-capcode
+.mod-capcode
+.developer-capcode
+*/
 }
