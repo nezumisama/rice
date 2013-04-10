@@ -147,13 +147,14 @@ fieldset {
     border: 1px solid #444444;
 }
 /* Font size */
-/*
+
 input, button, textarea, select,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
+    font-size: 3.175mozmm;
 }
-*/
+
 /* Meter bars */
 /*
 meter {

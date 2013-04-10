@@ -534,4 +534,10 @@ def_key "<"
 def_key ">"
   previous_found_item
 
+def_key "right"
+  seek_forward
+
+def_key "left"
+  seek_backward
+
 

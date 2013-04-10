@@ -98,7 +98,7 @@ visualizer_output_name = "my_fifo"
 visualizer_type = "spectrum"
 #
 #visualizer_look = "◆│"
-visualizer_look = "●│"
+visualizer_look = "■■"
 #
 ##### system encoding #####
 ##
@@ -223,10 +223,10 @@ tag_editor_album_format = "{(%y) }%b"
 ##
 #
 #alternative_header_first_line_format = "$b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b"
-alternative_header_first_line_format = "$b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b"
+alternative_header_first_line_format = "$b$7{%t}|{%f}$9$/b"
 #
 #alternative_header_second_line_format = "{{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}"
-alternative_header_second_line_format = "{{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}"
+alternative_header_second_line_format = "$5{%a}{ - %b}$9"
 #
 ##
 ## Note: Below variables also supports
@@ -253,7 +253,7 @@ selected_item_suffix = "$9"
 ## colors are not supported for below variable
 #
 #song_window_title_format = "{%a - }{%t}|{%f}"
-song_window_title_format = "{%a ----- }{%t}|{%f}"
+song_window_title_format = "{%a - }{%t}|{%f}"
 #
 ##### columns settings #####
 ##
@@ -307,6 +307,7 @@ song_columns_list_format = "(3f)[blue]{nrE} (40)[cyan]{t|f} (15)[blue]{aE} (45)[
 #
 #
 #playlist_shorten_total_times = "no"
+playlist_shorten_total_times = "yes"
 #
 #playlist_separate_albums = "no"
 playlist_separate_albums = "no"
@@ -340,8 +341,8 @@ playlist_editor_display_mode = "columns"
 #progressbar_look = "=>"
 #progressbar_look = "██░"
 #progressbar_look = "━╋━"
-progressbar_look = "─┼─"
-
+#progressbar_look = "─┼─"
+progressbar_look = "❱❱❭"
 #
 progressbar_boldness = "no"
 #
@@ -359,7 +360,7 @@ user_interface = "classic"
 #default_tag_editor_pattern = "%n - %t"
 #
 #header_visibility = "yes"
-header_visibility = "no"
+header_visibility = "yes"
 #
 #statusbar_visibility = "yes"
 statusbar_visibility = "no"
@@ -372,8 +373,10 @@ titles_visibility = "no"
 #fancy_scrolling = "yes"
 #
 #cyclic_scrolling = "no"
+cyclic_scrolling = "yes"
 #
 #lines_scrolled = "2"
+lines_scrolled = "2"
 #
 #follow_now_playing_lyrics = "no"
 #
@@ -448,7 +451,7 @@ startup_screen = "2"
 #clock_display_seconds = "no"
 clock_display_seconds = "yes"
 #
-#display_volume_level = "yes"
+display_volume_level = "yes"
 #
 #display_bitrate = "no"
 display_bitrate = "yes"
@@ -510,13 +513,13 @@ colors_enabled = "yes"
 empty_tag_color = "red"
 #
 #header_window_color = "default"
-header_window_color = "default"
+header_window_color = "white"
 #
 #volume_color = "default"
-volume_color = "default"
+volume_color = "black"
 #
 #state_line_color = "default"
-state_line_color = "default"
+state_line_color = "black"
 #
 #state_flags_color = "default"
 state_flags_color = "default"
@@ -534,7 +537,7 @@ color2 = "green"
 main_window_highlight_color = "default"
 #
 #progressbar_color = "default"
-progressbar_color = "cyan"
+progressbar_color = "black"
 #
 #progressbar_elapsed_color = "default"
 progressbar_elapsed_color = "blue"

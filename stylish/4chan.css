@@ -18,6 +18,7 @@ hr, /* horizontal lines */
 #navbotright > :not(.settingsWindowLink):not(#settingsWindowLinkBot), /* 4chanx settings link and home link on the bottom */
 #navtopright, /* 4chanx settings link and home link on the top */
 .postInfo > input, /* post checkbox for deleting */
+.closed, /* Thread closed blah blah. */
 form[action^="https://sys.4chan.org"][action$="post"] { /* form used for posting */
     display: none !important; 
 }
@@ -635,12 +636,15 @@ s:hover {
 }
 /* code blocks stuff */
 .prettyprint { /* code blocks */
-    background: transparent !important;
-    border: 1px solid #6089b3 !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: none !important;
     margin: 0.5em 0 0.5em 0 !important;
     padding: 0 !important;
     white-space: pre-wrap !important;
     vertical-align: middle !important;
+    max-height: 100em !important;
+    max-width: 100% !important;
+    font-family: "monospace" !important;
 }
 .kwd { /* keyword */
     color: #d98e36 !important;
