@@ -1,0 +1,133 @@
+/*  TODO:
+    * tab groups
+    * tabs
+*/
+@namespace url("http://www.w3.org/1999/xhtml");
+@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url("chrome://browser/content/tabview.html") {
+body {
+    color: #ffffff;
+    font-size: 12px;
+}
+#bg {
+    background: #111111 !important;
+}
+/* 
+    Actions (exit, search)
+*/
+#actions {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    right: 0 !important;
+    top: 0 !important;
+    width: auto !important;
+    height: 14px !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+}
+#actions > input {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-repeat: no-repeat !important;
+    background-position: 1px 1px !important;
+    opacity: 1 !important;
+}
+#actions > input#exit-button {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABmJLR0QAEQARABHTl+z4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QQGCy0J5zxR5wAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAMElEQVQoz2P8////fwYkwMjIyMjAwMCALo4OmBjIBPTXSH/ASCj0cIXyEArVkaARABt6EA86GPt2AAAAAElFTkSuQmCC") !important;
+    margin-right: 2px !important;
+}
+#searchbutton {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACNSURBVDjLndGxDYQwDIVhFzcEkdgvM2QvFqCiSnE0DMAI0HL/NY8mOAISybJk+0uUxAADPkACMrApJ9XNixON+GusYdPOACsQgaC8qp5qMGsgFs2oeq7BTQOhaAbV99YT59Y7flteFeAAeg+W/7gDi+InvACdB2vRC13wHTQNX/AT6OKnsMTTG3jiCRj+kPWH7PSquh4AAAAASUVORK5CYII=") !important;
+}
+/* 
+    Search
+*/
+#searchshade {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+}
+#searchbox {
+    width: 250px !important;
+    height: 50px !important;
+    margin: 0 !important;
+    padding: 5px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    top: calc(50vh - 25px) !important;
+    left: calc(50vw - 125px) !important;
+    font-size: 40px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+#otherresults {
+    box-shadow: none !important;
+    height: 16px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    font-size: inherit !important;
+    color: #ffffff !important;
+}
+#otherresults > .label {
+    color: inherit !important;
+    font-size: inherit !important;
+    line-height: 16px !important;
+    margin: 0 5px 0 5px !important;
+    vertical-align: top !important;
+}
+.inlineMatch {
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 1px !important;
+    height: 14px !important;
+}
+.notMainMatch {
+  opacity: 1 !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+#results {
+    display: inline-block !important;
+    height: 16px !important;
+}
+.inlineMatch > img {
+    margin: 0 3px 0 0 !important;
+    position: static !important;
+    background: green !important;
+    width: 14px !important;
+    height: 14px !important;
+}
+.inlineMatch > span {
+    height: 14px !important;
+    font-size: inherit !important;
+}
+#actions > input:hover,
+.inlineMatch:hover {
+    background-color: #2E5780 !important;
+}
+/*
+    Trenches (guides for moving/resizing groups)
+*/
+.guideTrench {
+    opacity: 1 !important;
+    border: 1px dashed #4a8bcb !important;
+    border-bottom: none !important;
+    -moz-border-end: none !important;
+    box-shadow: none !important;
+}
+/*
+    Tab groups
+*/
+.groupItem {
+    border: 1px solid #4a8bcb !important;
+    background: inherit !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+/*
+    Tab thumbnails
+*/
+}
