@@ -534,7 +534,7 @@ color1 = "green"
 color2 = "green"
 #
 #main_window_highlight_color = "yellow"
-main_window_highlight_color = "default"
+main_window_highlight_color = "blue"
 #
 #progressbar_color = "default"
 progressbar_color = "black"

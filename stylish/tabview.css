@@ -3,7 +3,6 @@
     * tabs
 */
 @namespace url("http://www.w3.org/1999/xhtml");
-@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url("chrome://browser/content/tabview.html") {
 body {
     color: #ffffff;
@@ -32,6 +31,7 @@ body {
     padding: 0 !important;
     width: 16px !important;
     height: 16px !important;
+    background-color: transparent !important;
     background-repeat: no-repeat !important;
     background-position: 1px 1px !important;
     opacity: 1 !important;
@@ -60,7 +60,7 @@ body {
     top: calc(50vh - 25px) !important;
     left: calc(50vw - 125px) !important;
     font-size: 40px !important;
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(32, 32, 32, 0.5) !important;
 }
 #otherresults {
     box-shadow: none !important;

@@ -66,13 +66,24 @@ a:hover, .pagelist > div input:hover {
     color: #ffffff !important;
     cursor: pointer !important;
 }
-input, textarea, select, option {
+input, textarea, select, option, 
+button, input[type="checkbox"] {
     background: inherit !important;
     color: inherit !important;
+    border: solid #333333 1px !important;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
 }
-input[type="checkbox"] {
-    background: inherit !important;
-    border: 1px solid #333333 !important;
+option {
+    border: none !important;
+}
+button:hover {
+    background: #2E5780!important;
+}
+select > button {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="10" width="20" version="1.1"><g><path fill="%23ffffff" d="M0%2C0%2C10%2C10%2C20%2C0z"/></g></svg>') !important;
+    background-size: auto 30% !important;
+    background-color: transparent;
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.5em 0 !important;
@@ -581,8 +592,6 @@ s:hover {
 #qr input:not([type="checkbox"]), 
 #qr textarea {
     border: none !important;
-    -moz-appearance: none !important;
-    -webkit-appearance: none !important;
 }
 #qr input[type="file"] {
     width: 70% !important;
@@ -825,7 +834,6 @@ a.useremail[href*="nezumi"]::before {
     width: 10em !important;
     padding: 0 !important;
     margin: 0 0.5em 0 1em !important;
-    outline: 1px solid #ffffff !important;
 }
 #post-preview { /* floating post info shown when hovering over thumbanils */
     background: inherit !important;
