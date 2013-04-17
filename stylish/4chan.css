@@ -503,6 +503,7 @@ s:hover {
     padding: 10px !important;
     background: inherit !important;
     border: 1px solid #6089b3 !important;
+    z-index: 3 !important;
 } 
 #qp > .replyContainer {
     margin-top: 0 !important;
@@ -588,6 +589,7 @@ s:hover {
 #qr { /* floating quick reply dialog */
     background: inherit !important;
     border: 1px solid #6089b3 !important;
+    z-index: 3 !important;
 }
 #qr input:not([type="checkbox"]), 
 #qr textarea {
@@ -628,7 +630,8 @@ s:hover {
     color: inherit !important;
 }
 #watcher, /* thread watcher */
-#updater { /* thread updater float */
+#updater, /* thread updater float */
+#stats { /* stats (posts/images) */
     z-index: 3 !important;
 }
 #updater:hover {

@@ -138,6 +138,6 @@ input, button, textarea, select,
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-    font-size: 3.175mozmm;
+    font-size: 3.175mozmm; /* 9pt */
 }
 
