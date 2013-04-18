@@ -35,6 +35,12 @@
     color: #fff !important;
     border: none !important;
     text-align: center !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+    line-height: 16px !important;
+    display: block !important;
+    height: 16px !important;
+    
 }
 .newtab-thumbnail, .newtab-thumbnail:hover {
     opacity: 1 !important;
@@ -54,39 +60,37 @@
     box-shadow: none !important;
 }
 .newtab-control-pin {
-    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFZSURBVHja7NS/S0JRFMDx78vnj4gowrLeINXSVEG9fhBC0FQhri0JFa0S0ZKbQ2M0NERb0R/g0ODSlkvlIWmMGoTkNYRgS4Vkr0UkNX88qc2zncP9XA7nHq5i0ny00cJ/hUUVd5NY3ATwNYWlmxUizDWBxc4qIUaZEa9FLL342WEEGGbSEhY764QZBKCPTRmTTgCxVWK1jA4xzzY9hdTBMnmi8sonWeI1sbQzTQgPSrFk4mccGzdEK3Fp205yxLggXawoKHhRSXJX2bZilqwFKna8TLCBr9CVyT37nOhfdfCPa2Y5ZKqQxFjTXywsiX7FARkgRQIPAXFZ2+0nnCQ5Zg8HuwSlywruIMURp/o5W+QIE5SB8iO2SBVr9JPmTM+C8cwjPhbIGQkt3xj+4Fp/B9Dy2oNhsISLWyOjmXWn/cv8F3EQJ6ubVdezRlyC/tbQO7e+3n/B3wMAgLhd6AMJkXEAAAAASUVORK5CYII=") !important;
-    background-size: contain !important;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill-rule="nonzero" fill="%23fff" d="m 3 1 0 1 1.5 1 0 3 -2 1 4 0 0 4 0.5 2 0.5 -2 0 -4 4 0 -2 -1 0 -3 1.5 -1 0 -1 z"/></svg>') !important;
     left: 0 !important;
 }
-.newtab-control-pin[pinned="true"] {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFHSURBVHja7JRPS0JBFMV/M4z6fIlBJrUoiaBFQbSZhbsgom/RR2jVJ+lrtI82EhQEkQMlQRQUiFjQIu2f2Euf00bMeMZ7ugiCZnfPzGG455x7hWX0I/kn/xGyCkImhgMo4rzhM4aPRxxLQ/shZCNxWWQDi4dE4iHJUueAc/zQn3knxzrzJInToMUkDgXOgi0GAN3hg2OKjDNBiilmcGhS4lI3Iwimrb5jjxu+Yn/Krq5EV7vEPZ1edU15GKteUIheJQa/GwgawSoLfXfL5E0sgs9GkmGNLWb7wDybeKZI/bvTQatccixR45AkWaZ54JY0GVa4ohbmc4syBY54RrFNmx32mSNLlZruhJC1h2dOsLptJIpXLnTFVFFY2hGyDbrVFVPhkugGZ8ipcrAI3NFG0pIgTcqIUcgu8MiT/nE7i/+9/YvkzwEACJFcckcplB4AAAAASUVORK5CYII=") !important;
-    background-size: contain !important;
-}
 .newtab-control-block {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAE7SURBVHja7NYtSwRRFMbx/+zggmExiaYF04Kw6YDJZjBo1CpWYf0c6zewaBRMBpNlYUEx3ZMEP4HNaBPkWm4Yhp37NsKAzIUph8v5zcs9D1NYa+liDeho9XAPdwer6lhVt2MbquqeqpatYFXdAZ6BZQyuqifAK3ATwgeeJiXwAIyBSQh36D1QAufALAsWkR/gDPh0pQmwWIU79M6hAI/AdfarFpE34KCC79bxCjqsoKci8u3rXcRktapOgQWw6Urv7ob2c9BouAH/ALaAtVQ0CW7AyUGTA8R986ta+QuYpaDJsDtI81p5BDylhEwSvOL0Ln2n/U/ghpE5DI1a26xunNOYOc/N6mA45OKhJ76ICYcG/KgNfAy8xMxpDb8UkVtvZ2ut9zLGrBtjhqF9lf0bMfuK/r+6h/8d/DsA0uT3zYhUAkQAAAAASUVORK5CYII=") !important;
-    background-size: contain !important;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill-rule="nonzero" fill="%23fff" d="M3.81 1.69 1.69 3.81 4.88 7 1.69 10.2 3.81 12.3 7 9.12l3.19 3.19 2.12-2.12-3.18-3.2 3.18-3.19-2.1-2.12-3.2 3.19-3.19-3.19z"/></svg>') !important;
     right: 0 !important;
 }
-.newtab-control-pin:hover {
-    background-color: rgba(70, 70, 70, 0.75) !important;
+.newtab-control-pin[pinned="true"] {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill-rule="nonzero" fill="%23fff" d="M7 1.34 6.29 2.05 6.65 3.82 4.53 5.94 2.4 5.23 5.23 8.06 2.4 10.9 1.34 12.7 3.11 11.6 5.94 8.77 8.77 11.6 8.06 9.47 10.2 7.35 11.9 7.71 12.7 7z"/></svg>') !important;
 }
-.newtab-control-block:hover {
-    background-color: rgba(70, 70, 70, 0.75) !important;
+.newtab-control:hover {
+    background-color: #2E5780 !important;
 }
 .newtab-control {
-    -moz-transition-duration:0s !important;
-    z-index:10000;
-    height:24px !important;
-    width:24px !important;
-    top:0 !important;
-    margin:0 !important;
-    padding:0 !important;
+    transition-duration: 0s !important;
+    z-index: 10000 !important;
+    height: 16px !important;
+    width: 16px !important;
+    top: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-size: 14px 14px !important;
+    background-repeat: no-repeat !important;
+    background-position: 1px 1px !important;
+    -moz-appearance: none !important;
 }
-.newtab-site:hover:before {
+.newtab-site:hover::before {
     width: 100%;
     position: absolute;
-    background: rgba(0, 0, 0, 0.75) !important;
-    height: 24px;
+    background: rgba(0, 0, 0, 0.75);
+    height: 16px;
     z-index: 1000;
     content: "";
 }
