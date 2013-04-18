@@ -60,17 +60,18 @@
     box-shadow: none !important;
 }
 .newtab-control-pin {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill-rule="nonzero" fill="%23fff" d="m 3 1 0 1 1.5 1 0 3 -2 1 4 0 0 4 0.5 2 0.5 -2 0 -4 4 0 -2 -1 0 -3 1.5 -1 0 -1 z"/></svg>') !important;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m 3 1 0 1 1.5 1 0 3 -2 1 4 0 0 4 0.5 2 0.5 -2 0 -4 4 0 -2 -1 0 -3 1.5 -1 0 -1 z"/></svg>') !important;
     left: 0 !important;
 }
 .newtab-control-block {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill-rule="nonzero" fill="%23fff" d="M3.81 1.69 1.69 3.81 4.88 7 1.69 10.2 3.81 12.3 7 9.12l3.19 3.19 2.12-2.12-3.18-3.2 3.18-3.19-2.1-2.12-3.2 3.19-3.19-3.19z"/></svg>') !important;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M3.81 1.69 1.69 3.81 4.88 7 1.69 10.2 3.81 12.3 7 9.12l3.19 3.19 2.12-2.12-3.18-3.2 3.18-3.19-2.1-2.12-3.2 3.19-3.19-3.19z"/></svg>') !important;
     right: 0 !important;
 }
 .newtab-control-pin[pinned="true"] {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill-rule="nonzero" fill="%23fff" d="M7 1.34 6.29 2.05 6.65 3.82 4.53 5.94 2.4 5.23 5.23 8.06 2.4 10.9 1.34 12.7 3.11 11.6 5.94 8.77 8.77 11.6 8.06 9.47 10.2 7.35 11.9 7.71 12.7 7z"/></svg>') !important;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M7 1.34 6.29 2.05 6.65 3.82 4.53 5.94 2.4 5.23 5.23 8.06 2.4 10.9 1.34 12.7 3.11 11.6 5.94 8.77 8.77 11.6 8.06 9.47 10.2 7.35 11.9 7.71 12.7 7z"/></svg>') !important;
 }
-.newtab-control:hover {
+.newtab-control:hover,
+#newtab-toggle:hover {
     background-color: #2E5780 !important;
 }
 .newtab-control {
@@ -95,15 +96,24 @@
     content: "";
 }
 #newtab-toggle {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAOCAYAAAA8E3wEAAAABmJLR0QAgACAAIBEKJNNAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEfATkEX0XovAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAOElEQVQ4y2NsaGj4z4AEGhoaGIkRY2BgaEBT09jQ0FBPSIyJgc5g+FtId8A4mmhGE81oohl5iQYASKE5E5v5U8MAAAAASUVORK5CYII=") !important;   
-    background-position: 0px 0px !important;
-    width: 14px !important;
-    height: 14px !important;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><g style="fill:%23fff"><rect y="0" x="0" height="4" width="4" /><rect y="0" x="5" height="4" width="4" /><rect y="0" x="10" height="4" width="4" /><rect y="5" x="0" height="4" width="4" /><rect y="5" x="5" height="4" width="4" /><rect y="5" x="10" height="4" width="4" /><rect y="10" x="0" height="4" width="4" /><rect y="10" x="5" height="4" width="4" /><rect y="10" x="10" height="4" width="4" /></g></svg>') !important;   
+    background-position: 1px 1px !important;
+    background-repeat: no-repeat !important;
+    width: 16px !important;
+    height: 16px !important;
     position: absolute !important;
-    top: 2px !important;
-    right: 2px !important;
+    top: 0 !important;
+    right: 0 !important;
+    border: none !important;
 }
+#newtab-toggle::-moz-focus-inner {
+    border: none !important;
+}
+
 #newtab-toggle[page-disabled] {
-    background-position: 14px 0px !important;
+    opacity: 0.3 !important;
+}
+#newtab-toggle[page-disabled]:hover {
+    opacity: 1 !important;
 }
 }
