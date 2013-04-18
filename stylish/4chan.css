@@ -123,6 +123,7 @@ s:hover {
     bottom: 0 !important;
     left: 0 !important;
     color: #444444 !important;
+    z-index: 3 !important;
 }
 .pagelist > div span {
     padding: 0 3px 0 3px !important; 
@@ -142,6 +143,7 @@ s:hover {
     padding: 0 !important; 
     margin: -2px 0 0 0 !important;
     font-size: inherit !important;
+    border: none !important;
 }
 .pagelist > .next, .pagelist > .prev { 
     padding: 0 !important; 
