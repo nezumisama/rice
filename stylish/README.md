@@ -14,6 +14,5 @@ Note this script uses the python 2 script `stylish_import_style` from the `utils
 
 ## Notes:
 * All these files are created, tested and used by me on Firefox's current stable version. I suggest using Firefox (or Gecko in general), though you can use these css files on other browsers. However, there could be problems with this. I'm trying to not use features limited to gecko, but it's not always the case. Another source of problems could be pre-release versions of FF.
-* To make my life easier I use a Firefox theme called [FT Deep Dark](https://addons.mozilla.org/en-US/firefox/addon/ft-deepdark) and use stylish to change some things. If you use the default theme or a different one, some stuff may not look as intended, because of different defaults. I will fix this (xul.css) eventually.
 * The xul style styles the interface but doesn't move stuff around. To do that, click with right mouse button on any toolbar and select *Customize*. Then you can move stuff around. I have only the tabs toolbar enabled, I have the menu button there, then tabs and urlbar right of them.
 * If you want to hide something, like the menu button, edit the relevant css, find the rule for the element you want to hide (the css files have comments for most rules telling what this rule styles) and add this on a new line between `{` and `}`: `display: none !important;`. 

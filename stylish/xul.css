@@ -517,6 +517,11 @@ treechildren::-moz-tree-cell-text(TEXT_NODE) {
     padding: 2px !important;    
     color: #ffffff !important;
 }
+/* editbox on findbar */
+.findbar-textbox[status="notfound"] {
+  box-shadow: 0 0 0 1em #c00000 inset !important;
+  color: #ffffff !important;
+}
 /*
 button {
     background: transparent !important;

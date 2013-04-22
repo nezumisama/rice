@@ -580,6 +580,9 @@ s:hover {
     bottom: 3px !important;
     margin: 0 !important;
 }
+#ihover { /* floating image shown when hovering over thumbnail */
+    z-index: 3 !important;
+}
 /* post menu */
 #menu, #menu * {
     background: inherit !important;
