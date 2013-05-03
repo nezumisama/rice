@@ -33,7 +33,7 @@ mpd_host = "localhost"
 mpd_port = "6600"
 #
 #mpd_music_dir = ""
-mpd_music_dir = "/home/narf/Muzyka"
+mpd_music_dir = "/home/narf/muzyka"
 #
 #mpd_connection_timeout = "5"
 #
@@ -223,7 +223,7 @@ tag_editor_album_format = "{(%y) }%b"
 ##
 #
 #alternative_header_first_line_format = "$b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b"
-alternative_header_first_line_format = "$b$7{%t}|{%f}$9$/b"
+alternative_header_first_line_format = "$b$8{%t}|{%f}$9$/b"
 #
 #alternative_header_second_line_format = "{{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}"
 alternative_header_second_line_format = "$5{%a}{ - %b}$9"
@@ -292,7 +292,8 @@ song_window_title_format = "{%a - }{%t}|{%f}"
 ##
 #
 #song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
-song_columns_list_format = "(3f)[blue]{nrE} (40)[cyan]{t|f} (15)[blue]{aE} (45)[cyan]{bE} (5f)[blue]{lr}"
+#song_columns_list_format = "(3f)[blue]{nrE} (40)[cyan]{t|f} (15)[blue]{aE} (45)[cyan]{bE} (5f)[blue]{lr}"
+song_columns_list_format = "(3f)[white]{nrE} (40)[blue]{t|f} (15)[white]{aE} (45)[blue]{bE} (5f)[white]{lr}"
 #
 ##### various settings #####
 #
