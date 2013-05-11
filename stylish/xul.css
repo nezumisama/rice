@@ -201,6 +201,11 @@ html|input.urlbar-input {
     /* black puzzle piece */
     list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADaSURBVDjLldK7SgRBEIXhD2+gmZdMTDTYdzAyV3wO30UFA0HWBzARDYw1NREx3khQQRYjE1FkbJOapRhmZAyKLrrPX5dDK6WoA8u4wyu28lszNMA9lIjhf8CNBO7+CWIRVzjDeQIvcIATHLWBq0ncFaM2cK0H+NAGLuEFQ1Qd4H2Id7A+MQfTcZ52gB+4jvwNczA1qcJxj7ELVmpXv3GJrw7hD24iH2MeZnp0eI6JNjHIO36mytsYhGE1OG79OXgKwXsy6jGBVX3fBA+jQ4WFGP8Wo9htH7MZ/AVIGx+tH4CRXQAAAABJRU5ErkJggg==") !important;
 }
+/* password notification icon */
+#password-notification-icon {
+    /* black key */
+    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAQAAAC1QeVaAAAAAnNCSVQICFXsRgQAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAqUlEQVQY02P4z4AMGcQYpjIcZ9jE4AfmoUjpMbyDc+pRJBk4Ge6CGVsZhBkqgbQHsqQTlFEJZOsD6Q3IkvZQxnuGXoZLQHofsqQMA6rrSlBdiiy1hYEJIZXJUApmfGL4xvCaoYqBHe5aBkaGf0DqFIMFitfAxHSGBUBqOwMXWpCAiVdAYgkD6380FzEw7GW4z/CXoZ+BEV0KJHkT4m1skIEhlCEZu9R/BgAjiagiLEcqwAAAAABJRU5ErkJggg==") !important;
+}
 /* arrow icon opening autocomplete history (same as pressing down) */
 .urlbar-history-dropmarker { 
     display: none !important;
