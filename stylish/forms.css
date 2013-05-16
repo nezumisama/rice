@@ -10,7 +10,7 @@
 @namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 /*  Note: normally, Firefox uses the native drop-down list widget (the Gtk2 one on X11) 
     for select. Properties changing the way the object looks like background don't work then.
-    Hovewer if either -moz-appearance is set to anything other than default (menulist), 
+    However if either -moz-appearance is set to anything other than default (menulist), 
     or border or border-radius are set, or in  other circumstances I don't know of, 
     the element is rendered differently. In this case, Firefox renders an ugly drop-down marker.
     This marker is styled by some properties of xul scrollbar (width and display at least).
@@ -95,7 +95,7 @@ select:focus > optgroup > option:checked {
   color: #ffffff ! important;
 }
 /*  Border around selected elements. 
-    It's generally for accesibility, so you see what is active when
+    It's generally for accessibility, so you see what is active when
     tabbing. When using the mouse it may be annoying. I decided to leave
     this for now. */
 input[type="checkbox"]:-moz-focusring,
@@ -125,11 +125,11 @@ progress {
     background: #ffffff;
     border: 1px solid #444444;
 }
-/*  Active part of the progressbar */
+/*  Active part of the progress-bar */
 ::-moz-progress-bar {
     background: #444444;
 }
-/*  Fieldset (frame around elements dividing forms in sections */
+/*  Field-set (frame around elements dividing forms in sections */
 fieldset {
     border: 1px solid #444444;
 }
@@ -140,4 +140,3 @@ input[type="submit"],
 input[type="reset"] {
     font-size: 3.175mozmm; /* 9pt */
 }
-

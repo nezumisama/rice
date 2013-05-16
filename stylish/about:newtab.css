@@ -49,11 +49,11 @@
     background-size: 100% 100% !important;
     */
     /*
-    scale thumbnail to fit the cell while perserving aspect ratio
+    scale thumbnail to fit the cell while preserving aspect ratio
     background-position: center center !important;
     background-size: contain !important;
     */
-    /* scale thumbnail to the largest size that will fit in either direction (in the other it will be clipped) while perserving aspect ratio */
+    /* scale thumbnail to the largest size that will fit in either direction (in the other it will be clipped) while preserving aspect ratio */
     background-size: cover !important;
 }
 .newtab-cell:hover, .newtab-site:hover, .newtab-site[dragged] {

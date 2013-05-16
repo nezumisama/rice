@@ -1,4 +1,4 @@
-## This repository contains various configuration file for desktop theming.
+## This repository contains various configuration file for visual desktop modification.
 See *README* files in different catalogs to learn what are the files in them for.
 # Installation
 Files can be installed automatically using `install` sh scripts. Each sub-directory contains one such script, which when ran, will install the files from that sub-directory. There's also one in the main directory that will run all other, installing everything.

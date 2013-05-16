@@ -105,7 +105,7 @@ html|input.urlbar-input {
 #go-button { 
     display: none !important; 
 }
-/* indetity box */
+/* identity box */
 #identity-box {
     width: 16px !important;  
     height: 16px !important;
@@ -130,7 +130,7 @@ html|input.urlbar-input {
     padding: 0 !important;
     margin: 0 0 0 1px !important;
     /* this contains 4 white icons, one for each state; from left: 
-       * normal/unsecure (globe)
+       * normal/insecure (globe)
        * mixed content
        * secure with verified domain (padlock)
        * secure with verified identity (stronger padlock) */
@@ -315,7 +315,7 @@ toolbarbutton#new-tab-button {
 #stylish-toolbar-button[styles-applied~="site"] {
     -moz-image-region: rect(0px, 28px, 14px, 14px) !important;
 }
-/* contrast+grayscale filter for noscript icons */
+/* contrast+gray-scale filter for noscript icons */
 #noscript-tbb > image {
     filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="f" color-interpolation-filters="sRGB"><feColorMatrix values="1 1 1 0 -1 1 1 1 0 -1 1 1 1 0 -1 0 0 0 1 0 " /></filter></svg>#f') !important;
 }
@@ -412,15 +412,15 @@ scrollcorner {
     Firefox has 8 enlargement zoom levels and 5 reduction ones, when 
     using ctrl + +/ctrl + - shortcuts, zoom commands from menu, zoom 
     toolbar buttons. Ctrl + scroll uses different steps (and more).
-    I found the ratios for the zoom levels with percision of 2 digits 
+    I found the ratios for the zoom levels with precision of 2 digits 
     after decimal point. Now for each zoom level, the scrollbars 
     width and height (and background size) are fixed (lowered
     for enlargement, increased for reduction), as to get the right
     amount of device pixels. This works exactly for those exact zoom 
-    levels, but not others. It will hovewer always at least minimize 
+    levels, but not others. It will however always at least minimize 
     the amount the scrollbars are resized.
 */
-/* Enlagrement */
+/* Enlargement */
 @media (min-resolution: 1.09dppx) {
 scrollbar[orient="vertical"] { width: 5.505px !important; }
 scrollbar[orient="horizontal"] { height: 5.505px !important; }
@@ -508,7 +508,7 @@ treechildren::-moz-tree-cell-text(TEXT_NODE) {
 .autocomplete-richlistitem {
     color: #ffffff  !important;
 }
-/* url autocomplete richtext listbox url of site; styledd in browser.css */
+/* url autocomplete richtext listbox url of site; styled in browser.css */
 .ac-url-text {
     color: #cccccc !important;
 }

@@ -8,9 +8,9 @@
 .picstyle_body {
     /*  Why these colors?
         I would set something dark.
-        Hovever, sometimes, I get images with transparent background and 
+        However, sometimes, I get images with transparent background and 
         dark details (like fonts), which is hard to see on a dark background.
-        So I set colors with luminance around 50%, as an optimal compromise 
+        So I set colors with brightness around 50%, as an optimal compromise 
         for readability of dark and bright details on such images.
     */
     background-repeat: repeat !important;

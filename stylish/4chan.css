@@ -44,7 +44,7 @@ body {
         Note: In CSS, 72pt = 96px always, regardless
         of the physical screen PPI. Thank W3C and uneducated 
         web devs for this.
-        Fortunetelly, Mozilla was kind enough to create an 
+        Fortunately, Mozilla was kind enough to create an 
         unit called mozmm, which is one physical millimeter 
         (if the system has properly set screen PPI). So 
         instead of points, I'm using millimeters here. One 
@@ -88,7 +88,7 @@ select > button {
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.5em 0 !important;
 }
-s { /* <s> is used for spoliers */
+s { /* <s> is used for spoilers */
     text-decoration: none !important;
     background: #6089b3 !important;
     color: #6089b3 !important;
@@ -539,7 +539,7 @@ s:hover {
     color: #af93ba !important;
     font-weight: bold !important;
 }
-.postInfo { /* post infor block (name, date, no...) */
+.postInfo { /* post info block (name, date, no...) */
     background: transparent !important;
     /* background: #1b2733 !important; */
     margin: 0 !important;
@@ -843,7 +843,7 @@ a.useremail[href*="nezumi"]::before {
     padding: 0 !important;
     margin: 0 0.5em 0 1em !important;
 }
-#post-preview { /* floating post info shown when hovering over thumbanils */
+#post-preview { /* floating post info shown when hovering over thumbnails */
     background: inherit !important;
     outline: 1px solid #6089b3 !important;
     border-radius: 0 !important;
