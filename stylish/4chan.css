@@ -39,7 +39,7 @@ body {
     padding: 0 !important;
     margin: 10px 10px 30px 10px !important;
     background: #111111 !important;
-    font-family: liberation sans !important;
+    font-family: sans-serif !important;
     /*  
         Note: In CSS, 72pt = 96px always, regardless
         of the physical screen PPI. Thank W3C and uneducated 
@@ -665,7 +665,7 @@ s:hover {
     vertical-align: middle !important;
     max-height: 100em !important;
     max-width: 100% !important;
-    font-family: "monospace" !important;
+    font-family: monospace !important;
 }
 .kwd, /* keyword */
 .atn { /* markup attribute name */
