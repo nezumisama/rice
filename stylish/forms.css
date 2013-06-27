@@ -112,6 +112,7 @@ button::-moz-focus-inner {
 */
 /*  File upload */
 /*  Fix https://bugzilla.mozilla.org/show_bug.cgi?id=52500 */
+/*  Edit: fixed in 23 */
 input[type="file"] > input[type="text"] {
     width: calc(100% - 7em - 3px) !important;
 }

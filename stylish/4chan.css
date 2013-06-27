@@ -597,7 +597,8 @@ s:hover {
     z-index: 3 !important;
 }
 #qr input:not([type="checkbox"]), 
-#qr textarea {
+#qr textarea,
+#qr input[type="file"] > * {
     border: none !important;
 }
 #qr input[type="file"] {
