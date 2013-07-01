@@ -19,6 +19,7 @@ hr, /* horizontal lines */
 #navtopright, /* 4chanx settings link and home link on the top */
 .postInfo > input, /* post checkbox for deleting */
 .closed, /* Thread closed blah blah. */
+.ad-plea, /* Advertise on 4chan */
 form[action^="https://sys.4chan.org"][action$="post"] { /* form used for posting */
     display: none !important; 
 }
@@ -52,6 +53,7 @@ body {
     */
     font-size: 13px !important; ; /* Workaround for non-gecko browsers. */
     font-size: 3.175mozmm !important; /* 9pt */
+    font-size: 3.527mozmm !important; /* 10pt */
 }
 /* foreground color */
 body, 
