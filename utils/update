@@ -7,6 +7,8 @@ idiff() {
     mydiff $2 $1
 }
 
+[[ -z "$XDG_CONFIG_HOME" ]] && XDG_CONFIG_HOME="$HOME/.config"
+
 cpcmd="cp -pi"
 diffcmd="mydiff"
 idiffcmd="idiff"
@@ -31,6 +33,7 @@ do
 done
 ricedir=`echo ${1:-$mydir/..} | sed 's_/$__'`
 $cmd $XDG_CONFIG_HOME/termite/config $ricedir/misc/termite.conf
+$cmd $XDG_CONFIG_HOME/fontconfig/fonts.conf $ricedir/misc/fonts.conf
 $cmd $HOME/.tmux.conf $ricedir/misc/tmux.conf
 $cmd $HOME/.emacs $ricedir/misc/emacs.conf
 $cmd $XDG_CONFIG_HOME/geany/colorschemes/darkmono.conf $ricedir/geany/darkmono.conf

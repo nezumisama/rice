@@ -1,9 +1,10 @@
 #!/bin/sh
+[[ -z "$XDG_CONFIG_HOME" ]] && XDG_CONFIG_HOME="$HOME/.config"
 cp -pi termite.conf $XDG_CONFIG_HOME/termite/config
 cp -pi ncmpcpp/config $HOME/.ncmpcpp/config
 cp -pi ncmpcpp/bindings $HOME/.ncmpcpp/bindings
 cp -pi tmux.conf $HOME/.tmux.conf
 cp -pi emacs.conf $HOME/.emacs
-
+cp -pi fonts.conf $XDG_CONFIG_HOME/fontconfig
 
 
