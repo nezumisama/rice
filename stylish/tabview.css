@@ -176,7 +176,7 @@ body {
 .stackExpander {
     cursor: pointer;
     bottom: 8px;
-    background-image: url("file:///tmp/exp.png") !important;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACWSURBVCiRnZHRDcMgEEMfbVZhKj66CqtkrqxScD56H8dBlKiWEAh8d7ZBM6okwqqR9GKEgIMZh7055oyvpOKmFbsbsLlJyc5vYHe9d7vzqlKSVE1KJHTbvZ0GfIDMnaQrCzG9IqktilrwTUz1Of6VugFPw/Fp5yRJjN/h02PR8Me9k3RlIRb2mJ4r7p4YU01AXmSYgxVOsR5+byq8wxwAAAAASUVORK5CYII=") !important;
     background-size: 14px 14px !important;
     background-position: 1px 1px !important;
     background-color: transparent !important;

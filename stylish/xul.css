@@ -418,6 +418,15 @@ scrollcorner {
     background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="6" width="6" version="1.1"><path fill="none" stroke="%23444444" stroke-width="2" d="M 0 0 6 6" /></svg>') !important;
     background-size: 6px 6px !important;
 }
+
+/* Workaround to hide scrollbars only in main window. */
+#content browser {
+    margin-right: -6px !important;
+    margin-bottom: -6px !important;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
 /*  
     The following code is a hack working around bug: 
     https://bugzilla.mozilla.org/show_bug.cgi?id=401213
