@@ -1,4 +1,4 @@
-B1;3407;0c@namespace url(http://www.w3.org/1999/xhtml);
+@namespace url(http://www.w3.org/1999/xhtml);
 @-moz-document url("about:newtab") {
 #newtab-scrollbox {
     background: #111111 !important;
@@ -103,9 +103,9 @@ B1;3407;0c@namespace url(http://www.w3.org/1999/xhtml);
     width: 16px !important;
     height: 16px !important;
     position: absolute !important;
+    top: 0 !important;
     /* temporary fix due to scrollbar hiding, 
        TODO: fix and change to 0 */
-    top: 0 !important;
     right: 6px !important;
     border: none !important;
 }

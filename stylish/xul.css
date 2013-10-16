@@ -351,9 +351,9 @@ toolbarbutton#new-tab-button {
 .toolbarbutton-menubutton-dropmarker > image {
     -moz-appearance: none !important;
     list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="1" width="1" version="1.1"><path fill="%23fff" d="m0.5 0.933-0.5-0.866h1z"/></svg>') !important;
-    padding: 10px 0 0 1px !important;
+    padding: 7px 0 0 1px !important;
     width: 10px !important;
-    -moz-image-region: rect(0px, 10px, 40px, 0px) !important;
+    -moz-image-region: rect(0px, 10px, 20px, 0px) !important;
  }
 /* tab groups button */
 #tabview-button {
