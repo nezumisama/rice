@@ -183,7 +183,7 @@ message_delay_time = "1"
 ##
 #
 #song_list_format = "{%a - }{%t}|{$8%f$9}$R{$3(%l)$9}"
-song_list_format = "{%t}|{%f}{$R%l}"
+song_list_format = "{%t}|{%f}{$R$5%l$9}"
 #
 #song_status_format = "{{%a{ \"%b\"{ (%y)}} - }{%t}}|{%f}"
 song_status_format = "{{%a{ \"%b\"{ (%y)}} - }{%t}}|{%f}"
