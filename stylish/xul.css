@@ -419,12 +419,12 @@ scrollcorner {
     background-size: 6px 6px !important;
 }
 
-/* Workaround to hide scrollbars only in main window. */
-#content browser {
-    margin-right: -6px !important;
-    margin-bottom: -6px !important;
-    overflow-y: scroll;
-    overflow-x: scroll;
+/* The following seems to hide scrollbars from web pages main bodies 
+   (but keep them for things like textareas). 
+   This also works for image view. 
+*/
+html|html > scrollbar {
+    display: none !important;
 }
 
 /*  

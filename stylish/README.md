@@ -2,6 +2,7 @@
 They can also be used for userChrome.css/userStyle.css.
 * `xul.css` themes the Firefox UI.
 * `xul_big.css` is an additional style to be used with the above. Makes elements bigger.
+* `html_big.css` same as above, but for non-xul stuff. 
 * `about:newtab.css` themes the "speed dial" page in Firefox.
 * `forms.css` changes a few properties of form elements to make them look better.
 * `view_image.css` themes background image on image view pages (this works together with the extension *pic style - checkerboard*.

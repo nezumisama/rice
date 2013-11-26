@@ -104,9 +104,7 @@
     height: 16px !important;
     position: absolute !important;
     top: 0 !important;
-    /* temporary fix due to scrollbar hiding, 
-       TODO: fix and change to 0 */
-    right: 6px !important;
+    right: 0 !important;
     border: none !important;
 }
 #newtab-toggle::-moz-focus-inner {
