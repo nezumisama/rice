@@ -1,0 +1,35 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+textbox#urlbar {
+    height: 30px !important;
+}
+
+#identity-box {
+    width: 30px !important; 
+}
+
+#TabsToolbar toolbarbutton > image,
+#addon-bar toolbarbutton > image {
+    width: 28px !important;
+    height: 28px !important;
+}
+
+#appmenu-toolbar-button > .toolbarbutton-menu-dropmarker,
+#appmenu-button > .toolbarbutton-menu-dropmarker,
+#page-proxy-favicon, #star-button, .ac-result-type-bookmark,
+.autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage),
+.notification-anchor-icon, .scrollbutton-up, .scrollbutton-down {
+    -moz-image-region: rect(0px, 28px, 28px, 0px) !important;
+    width: 28px !important;
+    height: 28px !important;
+}
+
+.tabbrowser-tab {
+    font-size: 14px !important;
+    padding: 0 0 0 10px !important;
+}
+
+.toolbarbutton-menubutton-dropmarker > image {
+    padding: 10px 0 0 1px !important;
+    -moz-image-region: rect(0px, 10px, 40px, 0px) !important;
+}
