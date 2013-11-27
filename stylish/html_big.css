@@ -1,0 +1,8 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document url("about:newtab") {
+#newtab-toggle {
+    background-size: 28px 28px !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+}
