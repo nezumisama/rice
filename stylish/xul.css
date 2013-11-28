@@ -252,6 +252,7 @@ toolbarbutton#new-tab-button {
     min-height: 0px !important;
     padding: 0px !important;
     border: none !important;
+    box-shadow: none !important;
     -moz-appearance: none !important;
 }
 /* status bar (the element right of addon bar */
