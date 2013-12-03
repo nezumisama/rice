@@ -17,7 +17,8 @@
     Also, for some values of -moz-appearance (none for example), things like background 
     can be set. */
 /*  Replace the ugly drop arrow button on select with a nice one */ 
-select > button {
+select > button,
+select:disabled > button {
 /*  Note: the attribute fill="<color>" controls the color of the image. 
     It's in hex notation, but one needs to replace # with %23. 
     For example to get  blue (#f00), that part should look like this: fill="%23f00" */
