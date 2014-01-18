@@ -1,0 +1,46 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document url("about:memory") {
+body {
+    background: #111 !important;
+    color: #fff !important;
+}
+div.section, div.opsRow {
+    background: #202020 !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+h2 {
+    background: #333 !important;
+}
+.mrValue {
+    color: #cd5c5c !important;
+}
+.mrName {
+    color: #77aadd !important;
+}
+.mrNote {
+    color: #af93ba !important;
+}
+.mrPerc {
+    color: #5ccd6b !important;
+}
+.mrSep, .treeline {
+    color: #888 !important;
+}
+button {
+    background: #333 !important;
+    color: #fff !important;
+    border-color: #444 !important;
+}
+button:hover {
+    background: #666 !important;
+    color: #fff !important;
+}
+a {
+    color: #4a8bcb !important;
+    text-decoration: none !important;
+}
+a:hover {
+    color: #fff !important;
+}
+}
