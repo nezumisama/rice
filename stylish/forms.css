@@ -6,6 +6,7 @@
     Note: this file is intended to be used with Firefox (gecko).
     Some parts may be useful for other layout engines, of course.
 */
+/* AGENT_SHEET */
 @namespace url(http://www.w3.org/1999/xhtml);
 @namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 /*  Note: normally, Firefox uses the native drop-down list widget (the Gtk2 one on X11) 
