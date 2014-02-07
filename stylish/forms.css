@@ -22,8 +22,9 @@ select > button,
 select:disabled > button {
 /*  Note: the attribute fill="<color>" controls the color of the image. 
     It's in hex notation, but one needs to replace # with %23. 
-    For example to get  blue (#f00), that part should look like this: fill="%23f00" */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="10" width="20" version="1.1"><g><path fill="%23000000" d="M0%2C0%2C10%2C10%2C20%2C0z"/></g></svg>') !important;
+    For example to get  blue (#f00), that part should look like this: fill="%23f00" 
+    The shape is a triangle facing downwards. */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="10" width="20"><path fill="%23000" d="M0 0 10 10 20 0z"/></svg>') !important;
     background-size: auto 30% !important;
     background-color: transparent;
     border: none;
