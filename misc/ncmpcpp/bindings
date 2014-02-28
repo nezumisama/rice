@@ -540,4 +540,5 @@ def_key ">"
 #def_key "left"
 #  seek_backward
 
-
+def_key "ctrl_d"
+   delete_browser_items
