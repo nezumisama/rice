@@ -1,121 +1,73 @@
-/*  
-    TODO:
-    toolbar height dependant on icon height
-*/
 /* AGENT_SHEET */
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @namespace html url("http://www.w3.org/1999/xhtml");
-/* searchbar */
-#search-container { max-width: 250px !important; }
-/* urlbar */
+
+/* Place menu button and panel ui button at the left. Can't do this in customize mode. */
+#TabsToolbar > * { -moz-box-ordinal-group: 2 !important; }
+#ctraddon_appbutton,
+#ctraddon_panelui-button { -moz-box-ordinal-group: 1 !important; }
+
+/* Anonymous elements that do nothing. */
+#navigator-toolbox::after, #tabbrowser-tabs::before, .tabbrowser-tab::after, .tabbrowser-tab::before, .toolbar-primary::after {
+    display: none !important;
+}
+
+#page-proxy-favicon {
+    -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
+    width: 14px !important;
+    height: 14px !important;
+ }
+
+/* 
+ *  Urlbar
+ */
+
 #urlbar-container { 
     max-width: 250px !important;
     min-width: 250px !important;
     background: inherit !important;
 }
-/* favicon and throbber (when tab is loading) */
-.tab-throbber, .tab-icon-image {
+
+#urlbar-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    clip-path: none !important;
+}
+
+#urlbar {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+#back-button, #forward-button {
     display: none !important;
 }
-/* common style for some toolbar buttons */
-#TabsToolbar toolbarbutton, /* on tabs toolbar */
-#addon-bar toolbarbutton { /* on addonbar */
-    background: transparent !important;
-    -moz-appearance: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    min-height: 0 !important;
-    border: none !important;
-    height: inherit !important;
-    padding: 0 1px 0 1px !important;
-}
-/* cointainer sizing rules */
-.toolbar-primary,
-textbox#urlbar {
-    height: 16px !important;
-}
-#identity-box {
-    width: 16px !important; 
-}
-/* common rules for icons */
-#TabsToolbar toolbarbutton > image,
-#addon-bar toolbarbutton > image {
-    margin: 0 !important;
-    width: 14px !important;
-    height: 14px !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-}
-#appmenu-toolbar-button > .toolbarbutton-menu-dropmarker,
-#appmenu-button > .toolbarbutton-menu-dropmarker,
-#page-proxy-favicon, #star-button, .ac-result-type-bookmark,
-.autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage),
-.notification-anchor-icon, .scrollbutton-up, .scrollbutton-down {
-    -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
-    width: 14px !important;
-    height: 14px !important;
- }
-/* arrowscrollbox with tabs, and some buttons */
-.tabbrowser-arrowscrollbox {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-/* scrollbox with tabs */
-.arrowscrollbox-scrollbox {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-/* textbox in the urlbar */
-textbox#urlbar {
-    background: transparent !important;
-    -moz-appearance: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-}
-/* input element in urlbar */
-html|input.urlbar-input {
-    color: #fff !important;
-}
-/* container for the above */
-.urlbar-input-box {
-    margin: 0 !important;
-}
-/* top level container for tabs */ 
-#navigator-toolbox { 
-    border-bottom: none !important; 
-}
-/* menu button
-   note: for some reason, on GNU/Linux this button has an id 
-   appmenu-toolbar-button and on Windows appmenu-button
-   #appmenu-toolbar-button, #appmenu-button */
-/* text on the menu button ("Firefox") */
-#appmenu-toolbar-button > .toolbarbutton-text,
-#appmenu-toolbar-button > .toolbarbutton-icon,
-#appmenu-button > .toolbarbutton-text, 
-#appmenu-button > .toolbarbutton-icon {
+
+/* Hiding this in customize mode breaks that mode. */ 
+#main-window:not([customizing]) #nav-bar {
     display: none !important;
 }
-/* menu button dropmarker (the arrow on the right) */
-#appmenu-toolbar-button > .toolbarbutton-menu-dropmarker,
-#appmenu-button > .toolbarbutton-menu-dropmarker {
-    -moz-appearance: none !important;
-    margin: 0 !important;
+
+#ctraddon_extra-bar, #customToolbars, #PersonalToolbar,
+#addon-bar, #nav-bar, #toolbar-menubar {
     padding: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    /* high-contrast white firefox icon */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m5.26 13.8c-1.9-0.4-3.51-1.6-4.28-3.2-0.631-1.25-0.952-2.08-0.867-4.06 0.107-2.45 0.819-4.04 1.9-5.25l0.51-0.569 0.07 1.02c0.0669 0.999 0.0773 1.02 0.453 1.07 0.295 0.0341 0.528-0.089 1-0.528 0.656-0.609 1.57-1.1 2.07-1.1 0.298-0.00299 0.296 0.00673-0.0983 0.652-0.22 0.36-0.5 0.89-0.61 1.18-0.21 0.51-0.21 0.52 0.14 0.66 0.195 0.0746 0.619 0.136 0.944 0.136s0.657 0.0809 0.738 0.18c0.23 0.28-0.26 0.94-0.98 1.33-0.63 0.34-0.64 0.36-0.64 1v0.659l-0.41-0.21c-0.76-0.4-0.94 0.11-0.29 0.77 0.52 0.52 1.02 0.52 2.07-0.01 0.94-0.48 1.24-0.51 1.55-0.16 0.33 0.37 0.28 0.69-0.15 0.88-0.21 0.09-0.6 0.36-0.88 0.61-0.45 0.39-0.86 0.57-1.82 0.77-0.53 0.12 0.88 0.67 1.71 0.67 1.26 0 2.62-0.86 3.22-1.96 0.5-0.95 0.4-2.31-0.3-3.33-0.2-0.29-0.3-0.52-0.3-0.52 0.153 0 0.995 0.742 1.27 1.12l0.331 0.452v-0.623c0-1.11-0.662-2.87-1.49-3.98l-0.33-0.472 0.73 0.402c2.3 1.27 3.8 4.26 3.3 6.87-0.4 2.44-2.2 4.64-4.44 5.44-0.97 0.3-2.92 0.4-4.1 0.1z"/></svg>') !important;
+    
 }
-/* go button (the one that you can press to accept the current url) */
-#go-button { 
+
+.urlbar-history-dropmarker, #urlbar-go-button, 
+#urlbar-reload-button, #urlbar-stop-button {
+    display: none !important;
+}
+
+#identity-icon-labels { 
     display: none !important; 
 }
-/* identity box */
-#identity-box { 
+
+#identity-box {
+    width: 16px !important; 
     height: inherit !important;
     min-width: 0 !important;  
     min-height: 0 !important;
@@ -125,11 +77,16 @@ html|input.urlbar-input {
     padding: 0 !important;
     background: transparent !important;
 }
-/* identity box text label */
-#identity-icon-labels { 
-    display: none !important; 
+
+#notification-popup-box {
+    position: static !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    margin: 0 !important;
 }
-/* identity box icon */
+
 #page-proxy-favicon { 
     min-width: 0 !important;  
     min-height: 0 !important;
@@ -139,387 +96,160 @@ html|input.urlbar-input {
     list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m7 0.0001c-0.179 0-0.356 0.018-0.531 0.031-0.93 0.309-1.74 1.41-2.25 2.97h5.56c-0.51-1.56-1.32-2.66-2.25-2.97-0.17-0.0119-0.35-0.0299-0.53-0.0299zm-2.28 0.375c-1.42 0.487-2.63 1.42-3.47 2.62h2.38c0.27-1.03 0.63-1.93 1.09-2.62zm4.53 0c0.457 0.692 0.845 1.59 1.12 2.62h2.34c-0.8-1.21-2-2.14-3.45-2.62zm-8.56 3.62c-0.365 0.768-0.593 1.61-0.656 2.5h3.09c0.03-0.88 0.14-1.72 0.29-2.5h-2.72zm3.28 0c-0.174 0.767-0.282 1.61-0.312 2.5h6.69c-0.0305-0.892-0.139-1.73-0.312-2.5h-6.06zm6.62 0c0.148 0.78 0.255 1.62 0.281 2.5h3.09c-0.1-0.88-0.3-1.74-0.7-2.5h-2.72zm-10.6 3.5c0.0635 0.891 0.291 1.73 0.656 2.5h2.72c-0.12-0.78-0.23-1.62-0.26-2.5h-3.09zm3.62 0c0.0305 0.892 0.139 1.73 0.312 2.5h6.06c0.173-0.767 0.282-1.61 0.312-2.5h-6.69zm7.22 0c-0.0259 0.876-0.133 1.72-0.281 2.5h2.72c0.361-0.762 0.593-1.62 0.656-2.5h-3.09zm-9.62 3.5c0.84 1.21 2.05 2.14 3.47 2.62-0.39-0.7-0.75-1.6-1.03-2.6h-2.38zm2.97 0c0.514 1.56 1.32 2.66 2.25 2.97 0.175 0.013 0.353 0.031 0.531 0.031 0.179 0 0.356-0.018 0.531-0.031 0.931-0.309 1.74-1.41 2.25-2.97h-5.56zm6.16 0c-0.28 1.03-0.668 1.93-1.12 2.62 1.43-0.483 2.62-1.42 3.47-2.62h-2.34z"/></svg>') !important;
     background: transparent !important;
 }
-/* proxy-favicon for about:newtab and possibly others */
+
 #page-proxy-favicon[pageproxystate="invalid"] {
     opacity: 0.3 !important;
 }
-/* verified domain */
+
 #identity-box.verifiedDomain > #page-proxy-favicon[pageproxystate="valid"] {
     /* white padlock icon */
     list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m7 0c-2.21 0-4 1.79-4 4v3c-0.55 0-1 0.52-1 1.16v4.69c0 0.7 0.45 1.2 1 1.2h8c0.554 0 1-0.523 1-1.16v-4.64c0-0.64-0.4-1.16-1-1.16v-3c0-2.21-1.79-4-4-4zm0 1c1.66 0 3 1.34 3 3v3h-6v-3c0-1.66 1.34-3 3-3z"/></svg>') !important;
     -moz-image-region: inherit !important;
 }
-/* verified identity */
+
 #identity-box.verifiedIdentity > #page-proxy-favicon[pageproxystate="valid"] {
     /* white stronger padlock icon */
     list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m7 0c-2.76 0-5 2.24-5 5v1c-0.55 0-1 0.52-1 1.16v5.69c0 0.7 0.45 1.2 1 1.2h10c0.554 0 1-0.523 1-1.16v-5.64c0-0.64-0.4-1.16-1-1.16v-1c0-2.76-2.24-5-5-5zm0 3c1.1 0 2 0.9 2 2v1h-4v-1c0-1.1 0.9-2 2-2z"/></svg>') !important;
     -moz-image-region: inherit !important;
 }
-/* mixed content (part of the site unencrypted) */
+
 #identity-box.mixedContent > #page-proxy-favicon[pageproxystate="valid"] {
     /* white broken padlock icon */
     list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m7 0c-1.34 0-2.52 0.645-3.25 1.66l0.72 0.72c0.53-0.84 1.47-1.38 2.53-1.38 1.66 0 3 1.34 3 3v3h-0.91l2.91 2.91v-1.75c0-0.64-0.4-1.16-1-1.16v-3c0-2.21-1.79-4-4-4zm-4 5.09v1.91c-0.55 0-1 0.52-1 1.16v4.69c0 0.7 0.45 1.2 1 1.2h8c0.24 0 0.453-0.118 0.625-0.281l-6.69-6.7h-0.91v-0.91l-1-1z"/></svg>') !important;
     -moz-image-region: inherit !important;
 }
-/* icons right of editbox (like bookmark star) */
-#urlbar-icons { 
-    height: inherit !important;
-    padding: 0 1px 0 1px !important;
-    margin: 0 !important;
-}
-/* bookmark star button */
-#star-button,
-/* autocomplete bookmark icon */
-.ac-result-type-bookmark,
-.autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
-    /* white heart icon */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m3.67 0.845c-2.03 0-3.66 1.63-3.66 3.66s0.0826 2.66 1.77 4.21c1.39 1.27 4.82 4.44 5.21 4.44s3.82-3.16 5.21-4.44c1.69-1.55 1.77-2.18 1.77-4.21s-1.63-3.66-3.66-3.66c-1.52 0-3.02 2.22-3.33 2.22-0.309 0-1.8-2.22-3.33-2.22z"/></svg>') !important;
+
+/*
+ *  Toolbars
+ */
+
+.toolbar-primary {
+    height: 16px !important;
     padding: 0 !important;
-}
-#star-button {
     margin: 0 !important;
-    opacity: 0.2 !important;
+    background: #111 !important;
+    -moz-appearance: none !important;
 }
-#star-button[starred="true"],
-#star-button:hover {
-    opacity: 1 !important;
-}
-/* a set of icons shown left of identity box for 
-   popup notifications, like addon install etc. */
-#notification-popup-box {
-    position: static !important;
-    background: #ffffff !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    border: none !important;
-    margin: 0 !important;
-}
-/* notification box icon */
-.notification-anchor-icon {
-    margin: 0 !important;
-}
-/* addons notification icon */
-#addons-notification-icon {
-    /* black puzzle piece */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23000" d="m2.88 14c-0.496-0.0683-1.44-0.252-1.59-0.309-0.0739-0.0283-0.0778-0.0534-0.238-1.5-0.216-1.96-0.268-2.98-0.166-3.23 0.0579-0.139 0.242-0.268 0.381-0.268 0.18-0.00025 0.47 0.185 0.644 0.412 0.0908 0.118 0.211 0.238 0.268 0.265 0.422 0.205 1.02-0.0595 1.25-0.555 0.162-0.343 0.18-0.976 0.0379-1.37-0.123-0.343-0.399-0.675-0.682-0.82-0.141-0.0727-0.235-0.0935-0.432-0.0954-0.3-0.003-0.478 0.0819-0.645 0.308-0.106 0.142-0.318 0.281-0.431 0.281-0.118 0-0.271-0.114-0.349-0.261-0.0798-0.149-0.0809-0.17-0.0772-1.37 0.002-0.67 0.016-1.44 0.0308-1.72l0.0269-0.497 0.166 0.0201c0.0915 0.0111 0.61 0.048 1.15 0.082 0.787 0.0493 1.05 0.0537 1.31 0.0218 0.308-0.0382 0.328-0.0462 0.44-0.175 0.213-0.244 0.2-0.393-0.052-0.628-0.42-0.39-0.476-0.495-0.477-0.893-0.001-0.492 0.162-0.879 0.507-1.2 0.488-0.452 1.2-0.6 1.83-0.381 0.399 0.139 0.638 0.359 0.779 0.717 0.0917 0.233 0.116 0.87 0.0417 1.09-0.0251 0.0738-0.158 0.276-0.294 0.448-0.381 0.481-0.437 0.724-0.227 0.974 0.158 0.188 0.247 0.198 1.32 0.149 0.533-0.0244 1.31-0.0658 1.72-0.092 0.414-0.0263 0.759-0.0419 0.766-0.0347 0.007 0.007-0.004 0.228-0.0253 0.49-0.103 1.27-0.119 1.65-0.108 2.39 0.0113 0.72 0.0203 0.822 0.0844 0.948 0.101 0.199 0.231 0.283 0.441 0.286 0.229 0.003 0.409-0.129 0.523-0.386 0.119-0.268 0.279-0.407 0.571-0.496 0.471-0.143 0.914-0.0382 1.25 0.296 0.2 0.199 0.323 0.431 0.431 0.81 0.108 0.38 0.116 1.27 0.0148 1.61-0.217 0.709-0.665 1.13-1.21 1.13-0.321 0.00048-0.546-0.115-0.81-0.414-0.243-0.275-0.497-0.411-0.771-0.411-0.163 0-0.196 0.0139-0.302 0.126-0.153 0.162-0.179 0.317-0.169 1 0.01 0.646 0.091 1.56 0.22 2.47 0.0248 0.174 0.0202 0.213-0.028 0.239-0.0822 0.044-1.26 0.274-1.85 0.363-0.327 0.0489-0.702 0.0768-1.08 0.08-0.527 0.005-0.588-0.002-0.752-0.0767-0.226-0.103-0.333-0.202-0.417-0.383-0.116-0.251-0.0781-0.483 0.111-0.681 0.398-0.419 0.357-1.13-0.0836-1.47-0.22-0.168-0.502-0.245-0.901-0.245-0.306-0.00047-0.387 0.0125-0.556 0.089-0.388 0.176-0.611 0.533-0.638 1.02-0.0185 0.34 0.0215 0.494 0.195 0.75 0.214 0.317 0.199 0.718-0.0378 0.976l-0.118 0.129-0.408 0.008c-0.225 0.005-0.497-0.004-0.606-0.0189z"/></svg>') !important;
-}
-/* password notification icon */
-#password-notification-icon {
-    /* black key */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23000" d="m5.95 5.81-0.0781 1.83-1.83-0.079-0.0781 1.83-1.83-0.078-0.0781 1.83-1.83-0.079-0.0781 1.83 0.877 0.956 5.73-5.26c1.86-1.71 3.19 0.592 5.58-1.6s1.62-3.99 0.234-5.5c-1.38-1.51-3.59-1.99-5.5-0.234-2.29 2.1-1.05 3.2-1.11 4.54zm3.82-3.51c0.528-0.485 1.35-0.45 1.83 0.079 0.485 0.528 0.45 1.35-0.0781 1.83-0.528 0.485-1.35 0.45-1.83-0.079-0.485-0.528-0.45-1.35 0.0781-1.83z"/></svg>') !important;
-}
-/* arrow icon opening autocomplete history (same as pressing down) */
-.urlbar-history-dropmarker { 
+
+#tabs-closebutton, #ctraddon_tabs-closebutton, #alltabs-button, 
+#private-browsing-indicator {
     display: none !important;
 }
-/* tab close button */
-.tab-close-button { 
-    display: none !important; 
-}
-/* new tab button */
-toolbarbutton.tabs-newtab-button, 
-toolbarbutton#new-tab-button {
-    /* white plus icon */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m7 11h-1v-1.5-1.5h-1.5-1.5v-1-1h1.5 1.5v-1.5-1.5h1 1v1.5 1.5h1.5 1.5v1 1h-1.5-1.5v1.5 1.5h-1z"/></svg>') !important;
-}
-/* tab */
-.tabbrowser-tab {
-    color: #fff !important;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
+
+/* 
+ *  Tabs
+ */
+
+#tabbrowser-tabs {
     min-height: 0 !important;
+    background: transparent !important;
+}
+
+.tabbrowser-tab {
+    background: transparent !important;
     font-family: sans-serif !important;
     font-size: 12px !important;
-    text-shadow: none !important;
+    color: #fff !important;
+    border: none !important;
     padding: 0 0 0 11px !important;
+}
+
+.tabbrowser-tab[selected=true] {
+    font-weight: bold !important;
+}
+
+.tab-background-start, .tab-background-end, .tab-icon {
+    display: none !important;
+}
+
+.tab-background-middle, .tab-background, .tab-content, 
+.tab-text-stack, .arrowscrollbox-scrollbox {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: inherit !important;
+}
+/* Progressbar from tab mix plus. */
+.tab-progress {
     margin: 0 !important;
 }
 
-/* selected tab */
-.tabbrowser-tab[selected="true"] {
-    /* background: #444 !important; */
-    font-weight: bold !important;
-}
-/* tabs container */
-.tabbrowser-tabs { 
-    background: transparent !important;
-    max-height: inherit !important;
-}
-/* primary toolbar (like tabs toolbar, addon bar etc.) */
-.toolbar-primary {
-    background: #111111 !important;
-    min-height: 0px !important;
-    padding: 0px !important;
-    border: none !important;
+/* 
+ *  Toolbar buttons
+ */
+
+#TabsToolbar toolbarbutton {
+    -moz-appearance: none !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
-    -moz-appearance: none !important;
+    padding: 0 1px 0 1px !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+    border: none !important;
+    height: inherit !important;
 }
-/* status bar (the element right of addon bar */
-#status-bar {
+
+#TabsToolbar toolbarbutton > label {
     display: none !important;
 }
-/* addonbar close button */
-#addonbar-closebutton {
-    /* white "X" icon */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M3.81 1.69 1.69 3.81 4.88 7 1.69 10.2 3.81 12.3 7 9.12l3.19 3.19 2.12-2.12-3.18-3.2 3.18-3.19-2.1-2.12-3.2 3.19-3.19-3.19z"/></svg>') !important;
-} 
-/* Custom icons for some extensions */
-/* greasemonkey */
-#addon-bar toolbarbutton#greasemonkey-tbb {
-    /* white high-contrast monkey face */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m6.92 0.52c-0.605 0.003-1.21 0.101-1.79 0.294-1.54 0.517-2.68 1.68-3.02 3.09l-0.0327 0.133-0.117-0.109c-0.383-0.359-0.877-0.351-1.27 0.0184-0.451 0.427-0.695 1.14-0.695 2 0 0.515 0.0673 0.888 0.235 1.3 0.257 0.634 0.704 1.02 1.15 0.984 0.0921-0.007 0.106-0.003 0.0965 0.0213-0.006 0.0159-0.0311 0.106-0.0557 0.2-0.17 0.655-0.117 1.38 0.149 2.02 0.675 1.65 2.52 2.8 4.78 2.98 0.467 0.0368 1.14 0.0183 1.62-0.0449 1.97-0.261 3.55-1.27 4.27-2.7 0.197-0.401 0.298-0.761 0.34-1.21 0.0364-0.386-0.006-0.765-0.14-1.24-0.0115-0.0405-0.0102-0.0408 0.133-0.0298 0.274 0.021 0.511-0.0765 0.743-0.305 0.289-0.285 0.493-0.704 0.596-1.22 0.217-1.08-0.0349-2.21-0.616-2.76-0.41-0.392-0.896-0.392-1.31-0.00057l-0.143 0.136-0.0115-0.0706c-0.0375-0.234-0.188-0.651-0.353-0.978-0.419-0.828-1.1-1.49-2-1.93-0.783-0.39-1.66-0.585-2.56-0.579zm-1.65 3.99c0.333-0.003 0.669 0.224 0.833 0.566 0.102 0.213 0.125 0.32 0.122 0.57-0.002 0.235-0.0493 0.419-0.152 0.598-0.202 0.349-0.57 0.539-0.938 0.484-0.252-0.0383-0.552-0.274-0.679-0.531-0.215-0.44-0.164-0.969 0.131-1.34 0.142-0.178 0.394-0.318 0.616-0.342 0.0221-0.002 0.0439-0.003 0.066-0.003zm3.35 0.00058c0.397 0.001 0.789 0.327 0.91 0.78 0.18 0.677-0.235 1.39-0.837 1.45-0.0456 0.004-0.128 0.001-0.184-0.006-0.3-0.0375-0.563-0.241-0.717-0.555-0.0999-0.202-0.135-0.377-0.124-0.611 0.0259-0.535 0.366-0.965 0.828-1.04 0.041-0.007 0.0824-0.01 0.124-0.01z"/></svg>') !important;
+
+#TabsToolbar toolbarbutton > image
+/* #addon-bar toolbarbutton > image */ {
+    margin: 0 !important;
     padding: 0 !important;
+    border: none !important;
+    width: 14px !important;
+    height: 14px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important; 
 }
-#greasemonkey-tbb[disabled="yes"] {
-    opacity: 0.3 !important;
+
+#PanelUI-menu-button > image {
+    /* high-contrast white firefox icon */
+    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m5.26 13.8c-1.9-0.4-3.51-1.6-4.28-3.2-0.631-1.25-0.952-2.08-0.867-4.06 0.107-2.45 0.819-4.04 1.9-5.25l0.51-0.569 0.07 1.02c0.0669 0.999 0.0773 1.02 0.453 1.07 0.295 0.0341 0.528-0.089 1-0.528 0.656-0.609 1.57-1.1 2.07-1.1 0.298-0.00299 0.296 0.00673-0.0983 0.652-0.22 0.36-0.5 0.89-0.61 1.18-0.21 0.51-0.21 0.52 0.14 0.66 0.195 0.0746 0.619 0.136 0.944 0.136s0.657 0.0809 0.738 0.18c0.23 0.28-0.26 0.94-0.98 1.33-0.63 0.34-0.64 0.36-0.64 1v0.659l-0.41-0.21c-0.76-0.4-0.94 0.11-0.29 0.77 0.52 0.52 1.02 0.52 2.07-0.01 0.94-0.48 1.24-0.51 1.55-0.16 0.33 0.37 0.28 0.69-0.15 0.88-0.21 0.09-0.6 0.36-0.88 0.61-0.45 0.39-0.86 0.57-1.82 0.77-0.53 0.12 0.88 0.67 1.71 0.67 1.26 0 2.62-0.86 3.22-1.96 0.5-0.95 0.4-2.31-0.3-3.33-0.2-0.29-0.3-0.52-0.3-0.52 0.153 0 0.995 0.742 1.27 1.12l0.331 0.452v-0.623c0-1.11-0.662-2.87-1.49-3.98l-0.33-0.472 0.73 0.402c2.3 1.27 3.8 4.26 3.3 6.87-0.4 2.44-2.2 4.64-4.44 5.44-0.97 0.3-2.92 0.4-4.1 0.1z"/></svg>') !important;
+    -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
 }
-#greasemonkey-tbb[disabled="yes"] .toolbarbutton-icon {
-    opacity: 1 !important;
-}
-/* grab and drag */
-#grabanddrag-button[gadOn="false"]  {
-    /* white crossed out hand */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M7 0 3.5 3.5 3.78 6.12 2.34 4.66 0 7 1.94 9.94 10.2 1.62 7 0zm6.09 3.03-9.44 9.44 1 1.53 7 0l2.3-10.5-0.9-0.47z"/></svg>') !important;
-    -moz-image-region: inherit !important;
-}
-#grabanddrag-button[gadOn="true"] {
-    /* white hand outline */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m6.91 0-0.336 0.371-3.09 3.09-0.245 0.247 0.0611 0.34 0.0306 0.34-0.367-0.402-0.489 0.525-2.05 2.07-0.428 0.402 0.336 0.494 4.1 6.21l0.22 0.3h0.367 6.14 0.55l0.122-0.556 2.1-9.26 0.1-0.56-0.5-0.24-6.13-3.12-0.46-0.22zm0.275 1.73 5.2 2.63-1.8 8.22h-5.2l-3.58-5.41 1.16-1.17 0.795 0.804 1.41 1.45-0.24-2.06-0.24-1.95 2.47-2.53z"/></svg>') !important;
-    -moz-image-region: inherit !important;
-}
-#grabanddrag-button[gadOn="QT"] {
-    /* white double-crossed hand */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M7 0 3.5 3.5 3.78 6.12 2.34 4.66 0 7 1.94 9.94 10.2 1.62 7 0zm4.22 2.09-8.69 8.69l0.55 0.8 9.04-9.04-0.9-0.47zm1.88 0.938-9.44 9.44 1 1.53 7 0l2.3-10.5-0.9-0.47z"/></svg>') !important;
-    -moz-image-region: inherit !important;
-}
-#grabanddrag-button[gadOn="BL"] {
-    /* white hand */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M7 0 3.5 3.5 3.79 6.12 2.33 4.67 0 7 4.67 14 11.7 14 14 3.5 7 0z"/></svg>') !important;
-    -moz-image-region: inherit !important;
-}
-/* adblock plus */
-#abp-toolbarbutton {
-    /* white stop sign with letters "ABP" cut out */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M4.09 0l-4.09 4.09v5.82l4.09 4.09h5.82l4.09-4.09v-5.82l-4.09-4.09h-5.82zm-2.12 3.47h2.44l0.75 6.73v-6.73h2.12c0.55 0 0.95 0.13 1.22 0.37 0.27 0.25 0.41 0.67 0.41 1.25v0.07 0.22c0 0.05-0.02 0.14-0.03 0.24-0.01 0.11-0.02 0.19-0.04 0.26-0.01 0.05-0.05 0.13-0.09 0.21-0.04 0.09-0.07 0.17-0.13 0.22-0.05 0.06-0.13 0.11-0.21 0.16-0.09 0.05-0.2 0.1-0.32 0.12 0.17 0.04 0.33 0.13 0.44 0.22 0.12 0.1 0.19 0.18 0.25 0.28 0.06 0.11 0.12 0.26 0.16 0.41 0.03 0.15 0.05 0.27 0.06 0.38 0.01 0.1 0 0.23 0 0.37 0 0.37-0.04 0.67-0.09 0.94-0.05 0.26-0.13 0.51-0.25 0.72-0.13 0.19-0.31 0.39-0.54 0.49-0.22 0.1-0.5 0.1-0.84 0.1h-2.09-1.5l-0.1-1.03h-0.81l-0.09 1.03h-1.5l0.78-7.03zm7.06 0h2.07c0.3 0 0.5 0.02 0.7 0.09s0.4 0.19 0.5 0.35c0.2 0.16 0.3 0.4 0.4 0.68s0.1 0.6 0.1 1v0.91c-0.1 0.25-0.2 0.46-0.3 0.66-0.1 0.19-0.3 0.34-0.5 0.43-0.2 0.1-0.5 0.13-0.8 0.13h-0.6v2.78h-1.57v-7.03zm-2.34 1.09v1.56h0.31c0.08 0.01 0.14 0.01 0.19-0.03 0.05-0.03 0.1-0.09 0.12-0.15s0.03-0.11 0.03-0.16c0.01-0.05 0-0.12 0-0.19v-0.68c0-0.23-0.09-0.35-0.31-0.35h-0.34zm3.91 0.19v1.72h0.1 0.1c0.1-0.01 0.1-0.02 0.2-0.03 0.1-0.02 0.1-0.06 0.1-0.1 0.1-0.03 0.1-0.09 0.1-0.15v-0.25c0.1-0.1 0.1-0.2 0.1-0.35 0-0.31-0.1-0.53-0.1-0.65-0.1-0.12-0.2-0.19-0.4-0.19h-0.2zm-7.51 0.03l-0.18 3.41h0.56l-0.22-3.41h-0.16zm3.6 2.44v2.06c0.07 0.01 0.12 0 0.15 0 0.41 0 0.6-0.18 0.6-0.53v-0.87c0-0.23-0.02-0.4-0.1-0.5-0.07-0.11-0.21-0.16-0.37-0.16h-0.28z"/></svg>') !important;
-    -moz-image-region: inherit !important;
-}
-#abp-toolbarbutton[abpstate="disabled"],
-#abp-toolbarbutton[abpstate="whitelisted"] {
-    -moz-image-region: inherit !important;
-    opacity: 0.3 !important;
-}
-/* stylish */
-#stylish-toolbar-button {
-    /* brush - outline */ 
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M0.906 0.0312c-0.296-0.037-0.587 0.185-0.687 0.344s-0.146 0.31-0.156 0.344c-0.0666 0.202-0.0194 0.28 0 0.375s0.0603 0.186 0.0938 0.281c0.0669 0.191 0.153 0.387 0.25 0.594 0.183 0.39 0.329 0.721 0.812 1.34 0.301 0.387 0.748 0.744 1.22 1.09 0.47 0.35 0.95 0.685 1.25 0.938 0.647 0.544 0.926 0.818 1.28 1.38 0.0379 0.059 0.148 0.65 0.125 1.16-0.03 0.51-0.1 0.97-0.1 0.97l-0.03 0.22 0.15 0.19 2 2 0.344 0.312h0.0312l2.45 2.5 0.26-0.2-2.48-2.5 0.09-0.1 0.16-0.1 0.09-0.1 2.44 2.4 0.3-0.3-2.42-2.4 0.18-0.2 0.16-0.2 2.48 2.5 0.3-0.3-2.47-2.5 0.09-0.06 0.25-0.281 2.44 2.44 0.344-0.312-2.38-2.49 0.28-0.28 0.0625-0.0625 2.47 2.44 0.25-0.25-2.47-2.44 0.156-0.156h0.0312l0.156-0.156 2.44 2.41 0.281-0.25-2.5-2.51 0.1-0.09 0.1-0.03 0.2-0.25 2.5 2.48 0.2-0.29-2.5-2.47 0.1-0.03-0.4-0.35-1.82-1.84v-0.03c-0.02-0.03-0.05-0.05-0.07-0.07-0.01 0-0.02 0.02-0.03 0-0.06-0.06-0.11-0.1-0.16-0.12-0.09-0.04-0.15-0.03-0.21-0.03-0.123-0.01-0.27-0.027-0.5 0-0.236 0.028-0.64 0.0625-1 0.0625s-0.73-0.06-0.72-0.06c-0.24-0.12-0.87-0.65-1.44-1.25-0.24-0.26-0.57-0.74-0.91-1.22-0.33-0.48-0.66-0.96-1.03-1.28-0.57-0.502-0.8-0.579-1.19-0.782-0.48-0.256-0.95-0.374-1.21-0.407zm0.156 1.06c0.196 0.045 0.397 0.0681 0.625 0.188 0.43 0.226 0.472 0.193 1 0.656 0.187 0.164 0.515 0.616 0.844 1.09 0.329 0.478 0.652 1.01 1 1.38 0.62 0.64 1.22 1.18 1.73 1.43 0.38 0.19 0.75 0.16 1.16 0.16s0.84-0.03 1.12-0.06c0.12-0.02 0.14-0.03 0.19-0.03h0.0312l1.5 1.53-0.188 0.188h-0.0312l-0.16 0.25-0.28 0.28-0.22 0.18-0.31 0.32-0.25 0.28-0.31 0.31-0.28 0.25-0.28 0.28-0.29 0.32-0.125 0.156-1.5-1.5c0.03-0.24 0.08-0.43 0.1-0.86 0.03-0.57 0.06-1.19-0.28-1.72-0.4-0.63-0.79-1.06-1.47-1.63-0.36-0.3-0.83-0.63-1.28-0.97-0.45-0.33-0.9-0.69-1.06-0.9-0.45-0.58-0.5-0.76-0.69-1.16-0.08-0.18-0.17-0.33-0.22-0.47z"/></svg>') !important;
-}
-#stylish-toolbar-button[styles-applied~="site"] {
-    /* brush - filled */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m0.863 0.0166c-0.223-0.02-0.508 0.122-0.625 0.281s-0.154 0.272-0.188 0.375c-0.0979 0.298 0.0174 0.528 0.0938 0.719 0.0763 0.191 0.163 0.377 0.25 0.562 0.183 0.39 0.329 0.721 0.813 1.34 0.301 0.387 0.748 0.744 1.22 1.09 0.47 0.35 0.95 0.685 1.25 0.938 0.647 0.544 0.926 0.818 1.28 1.38 0.0379 0.06 0.148 0.651 0.125 1.16-0.023 0.506-0.0938 0.938-0.0938 0.938l-0.0312 0.25 0.156 0.188 2 1.97 0.344 0.344 0.0312-0.0312 2.44 2.47 0.219-0.25-2.44-2.44 0.0938-0.0938 0.188-0.188 0.0625-0.0625 2.47 2.44 0.281-0.312-2.44-2.44 0.188-0.188 0.156-0.156 2.44 2.44 0.344-0.312-2.47-2.44 0.0938-0.0938 0.25-0.281 2.44 2.47 0.344-0.312-2.44-2.47 0.281-0.281 0.0625-0.0625 2.47 2.44 0.25-0.25-2.47-2.44 0.188-0.188 0.156-0.156 2.44 2.44 0.281-0.25-2.44-2.47 0.0938-0.0938 0.0312-0.0312 0.219-0.25 2.47 2.47 0.25-0.281-2.47-2.5 0.0312-0.0312-0.312-0.312-1.87-1.88c-0.0172-0.028-0.0438-0.0415-0.0625-0.0625-0.0748-0.082-0.138-0.105-0.188-0.125-0.0993-0.039-0.157-0.0595-0.219-0.0625-0.123-0.01-0.27 0.00025-0.5 0.0312-0.236 0.028-0.609 0.0625-0.969 0.0625-0.36 0.0005-0.755-0.0655-0.75-0.0625-0.236-0.119-0.867-0.651-1.44-1.25-0.244-0.257-0.574-0.736-0.906-1.22-0.332-0.482-0.669-0.963-1.03-1.28-0.571-0.501-0.8-0.609-1.19-0.812-0.487-0.256-0.959-0.349-1.25-0.375z"/></svg>') !important;
-    -moz-image-region: inherit !important;
-}
-/* contrast+gray-scale filter for noscript icons */
-#noscript-tbb > image {
-    filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="f" color-interpolation-filters="sRGB"><feColorMatrix values="1 1 1 0 -1 1 1 1 0 -1 1 1 1 0 -1 0 0 0 1 0"/></filter></svg>#f') !important;
-    width: 16px !important;
-    height: 16px !important;
-}
-/* hide dropmarkers for these icons, since clicking on it
-   does the same as clicking on the icon */
-#abp-toolbarbutton > dropmarker,
-#stylish-toolbar-button > dropmarker {
-    display: none !important;
-}
-/* tab scroll buttons */
-.scrollbutton-up, .scrollbutton-down {
-    /* right arrow triangle icon */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m11.4 1.95 0.000001 5.05v5.05l-4.4-2.48-4.37-2.52 4.37-2.52z"/></svg>') !important;
-}
-/* icons on tab scroll buttons */
-.scrollbutton-up > .toolbarbutton-icon,
-.scrollbutton-down > .toolbarbutton-icon {
-    -moz-appearance: none !important;
-}
-/* flip the right scroll button's icon */
-.scrollbutton-down > .toolbarbutton-icon {
-    transform: scaleX(-1) !important;
- }
- /* toolbar button dropmarker */
-.toolbarbutton-menubutton-dropmarker {
-    -moz-appearance: none !important;
-    padding: 0 !important;
-}
-.toolbarbutton-menubutton-dropmarker > image {
-    -moz-appearance: none !important;
-    /* white triangle facing downward */
-    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="1" width="1"><path fill="%23fff" d="m0.5 0.933-0.5-0.866h1z"/></svg>') !important;
-    padding: 7px 0 0 1px !important;
-    width: 10px !important;
-    -moz-image-region: rect(0px, 10px, 20px, 0px) !important;
- }
-/* tab groups button */
+
 #tabview-button {
     /* 4 white rectangles */
     list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><g fill="%23fff"><rect height="4" width="4" y="0" x="0"/><rect height="4" width="8" y="0" x="6"/><rect height="8" width="8" y="6" x="0"/><rect height="8" width="4" y="6" x="10"/></g></svg>') !important;
     -moz-image-region: inherit !important;
 }
-/* Scrollbar stuff
-   Notes:
-   xul scrollbar layout:
-     <scrollbar>
-       <xul:scrollbarbutton type="decrement"/>
-       <xul:slider flex="1">
-         <xul:thumb/>
-       </xul:slider>
-       <xul:scrollbarbutton type="increment"/>
-     </scrollbar>
-   scrollbar has an attribute "orient" 
-   which can be "vertical" or "horizontal"
-   scrollbarbutton has an attribute "type"
-   which can be "increment" or "decrement" */
-/* scrollbar (outermost container) */
-scrollbar {
+
+toolbarbutton.tabs-newtab-button, 
+toolbarbutton#new-tab-button {
+    /* white plus icon */
+    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m7 11h-1v-1.5-1.5h-1.5-1.5v-1-1h1.5 1.5v-1.5-1.5h1 1v1.5 1.5h1.5 1.5v1 1h-1.5-1.5v1.5 1.5h-1z"/></svg>') !important;
+    width: 16px !important;
+}
+
+.scrollbutton-up, .scrollbutton-down {
+    /* right arrow triangle icon */
+    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m11.4 1.95 0.000001 5.05v5.05l-4.4-2.48-4.37-2.52 4.37-2.52z"/></svg>') !important;
+}
+
+.scrollbutton-up > .toolbarbutton-icon,
+.scrollbutton-down > .toolbarbutton-icon {
     -moz-appearance: none !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
 }
-/* vertical scrollbar */
-scrollbar[orient="vertical"] { 
-    width: 6px !important; 
-    background-position: bottom !important;
-}
-/* horizontal scrollbar */
-scrollbar[orient="horizontal"] { 
-    height: 6px !important;
-    background-position: right !important;
-}
-/* scrollbar handle */
-scrollbar thumb {
-    -moz-appearance: none !important;
-    border: none !important;
-    background: #444444 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-}
-/* scrollbar up/down buttons (possibly others) */
-scrollbarbutton { 
-    background: #0f0 !important;
-    display: none !important;
-}
-/* scrollbar slider (the part on which the handle moves) */
-scrollbar slider {
-    background: transparent !important;
-}
-scrollbar,
-/* scrollbars corner (shown when both horizontal 
-   and vertical scrollbars are visible) */
-scrollcorner {
-    /* 45deg dark-grey bars pattern */
-    background-color: #111 !important;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="6" width="6"><path fill="none" stroke="%23444" stroke-width="2" d="M 0 0 6 6"/></svg>') !important;
-    background-size: 6px 6px !important;
-}
+/* Flip the right scroll button's icon. */
+.scrollbutton-down > .toolbarbutton-icon {
+    transform: scaleX(-1) !important;
+ }
 
-/* The following seems to hide scrollbars from web pages main bodies 
-   (but keep them for things like textareas). 
-   This also works for image view. 
-*/
-html|html > scrollbar {
-    display: none !important;
-}
-
-/*  
-    The following code is a hack working around bug: 
-    https://bugzilla.mozilla.org/show_bug.cgi?id=401213
-    - scrollbars are scaled with the page content when you use zoom.
-    The way this works is that media queries are used to determine 
-    the zoom level (ratio between css pixels and device pixels). 
-    Firefox has 8 enlargement zoom levels and 5 reduction ones, when 
-    using ctrl + +/ctrl + - shortcuts, zoom commands from menu, zoom 
-    toolbar buttons. Ctrl + scroll uses different steps (and more).
-    I found the ratios for the zoom levels with precision of 2 digits 
-    after decimal point. Now for each zoom level, the scrollbars 
-    width and height (and background size) are fixed (lowered
-    for enlargement, increased for reduction), as to get the right
-    amount of device pixels. This works exactly for those exact zoom 
-    levels, but not others. It will however always at least minimize 
-    the amount the scrollbars are resized.
-*/
-/* Enlargement */
-@media (min-resolution: 1.09dppx) {
-scrollbar[orient="vertical"] { width: 5.505px !important; }
-scrollbar[orient="horizontal"] { height: 5.505px !important; }
-scrollbar, scrollcorner { background-size: 5.505px 5.505px !important; } }
-@media (min-resolution: 1.19dppx) {
-scrollbar[orient="vertical"] { width: 5.042px !important; }
-scrollbar[orient="horizontal"] { height: 5.042px !important; }
-scrollbar, scrollcorner { background-size: 5.042px 5.042px !important; } }
-@media (min-resolution: 1.32dppx) {
-scrollbar[orient="vertical"] { width: 4.545px !important; }
-scrollbar[orient="horizontal"] { height: 4.545px !important; }
-scrollbar, scrollcorner { background-size: 4.545px 4.545px !important; } }
-@media (min-resolution: 1.5dppx) {
-scrollbar[orient="vertical"] { width: 4px !important; }
-scrollbar[orient="horizontal"] { height: 4px !important; }
-scrollbar, scrollcorner { background-size: 4px 4px !important; } }
-@media (min-resolution: 1.71dppx) {
-scrollbar[orient="vertical"] { width: 3.509px !important; }
-scrollbar[orient="horizontal"] { height: 3.509px !important; }
-scrollbar, scrollcorner { background-size: 3.509px 3.509px !important; } }
-@media (min-resolution: 2dppx) {
-scrollbar[orient="vertical"] { width: 3px !important; }
-scrollbar[orient="horizontal"] { height: 3px !important; }
-scrollbar, scrollcorner { background-size: 3px 3px !important; } }
-@media (min-resolution: 2.39dppx) {
-scrollbar[orient="vertical"] { width: 2.51px !important; }
-scrollbar[orient="horizontal"] { height: 2.51px !important; }
-scrollbar, scrollcorner { background-size: 2.51px 2.51px !important; } }
-@media (min-resolution: 3dppx) {
-scrollbar[orient="vertical"] { width: 2px !important; }
-scrollbar[orient="horizontal"] { height: 2px !important; }
-scrollbar, scrollcorner { background-size: 2px 2px !important; } }
-/* Reduction */
-@media (max-resolution: 0.9dppx) {
-scrollbar[orient="vertical"] { width: 6.667px !important; }
-scrollbar[orient="horizontal"] { height: 6.667px !important; }
-scrollbar, scrollcorner { background-size: 6.667px 6.667px !important; } }
-@media (max-resolution: 0.8dppx) {
-scrollbar[orient="vertical"] { width: 7.5px !important; }
-scrollbar[orient="horizontal"] { height: 7.5px !important; }
-scrollbar, scrollcorner { background-size: 7.5px 7.5px !important; } }
-@media (max-resolution: 0.67dppx) {
-scrollbar[orient="vertical"] { width: 8.955px !important; }
-scrollbar[orient="horizontal"] { height: 8.955px !important; }
-scrollbar, scrollcorner { background-size: 8.955px 8.955px !important; } }
-@media (max-resolution: 0.5dppx) {
-scrollbar[orient="vertical"] { width: 12px !important; }
-scrollbar[orient="horizontal"] { height: 12px !important; }
-scrollbar, scrollcorner { background-size: 12px 12px !important; } }
-@media (max-resolution: 0.3dppx) {
-scrollbar[orient="vertical"] { width: 20px !important; }
-scrollbar[orient="horizontal"] { height: 20px !important; }
-scrollbar, scrollcorner { background-size: 20px 20px !important; } }
-
-/* hover background color */
-.tabbrowser-tab:hover, /* tab */
-#TabsToolbar toolbarbutton:hover, /* buttons on tabs toolbar */
-#addon-bar > toolbarbutton:hover, /* buttons on addons toolbar */
-.scrollbutton-up:hover, /* scrollbuttons */
-.scrollbutton-down:hover,
-#identity-box:hover, /* identity box */
-scrollbar thumb:hover, /* scrollbar handle */
-scrollbar thumb:active,
-#urlbar-icons:hover, /* icons right of urlbar input */
-#notification-popup-box:hover, /* notification popup box */
-.autocomplete-richlistitem[selected="true"] { /* selected ac rlb item */
+/* Hover effect. */
+#identity-box:hover,
+.tabbrowser-tab:hover,
+#TabsToolbar toolbarbutton:hover {
     background: #2E5780 !important;
     opacity: 1 !important;
     box-shadow: none !important;
     transition-duration: 1ms !important;
 }
-/* some tweaks for DOM Inspector addon */
+
+/* For DOM Inspector. */
 treechildren::-moz-tree-cell-text(ELEMENT_NODE) {
     color: #ffffff !important;
 }
@@ -527,43 +257,3 @@ treechildren::-moz-tree-cell-text(CDATA_SECTION_NODE),
 treechildren::-moz-tree-cell-text(TEXT_NODE) {
     color: #4444aa !important;
 }
-/* autocomplete richtext listbox used for autocomplete of url; styled in autocomplete.css */ 
-.autocomplete-richlistbox {
-    background: #111111 !important;
-}
-/* autocomplete richtext listbox item */
-.autocomplete-richlistitem {
-    color: #ffffff  !important;
-}
-/* url autocomplete richtext listbox url of site; styled in browser.css */
-.ac-url-text {
-    color: #cccccc !important;
-}
-/* .ac-site-icon, .ac-type-icon - ac left/right icons */
-/* #statusbar-display, statuspanel-inner */
-/* Label popping up when hovering over links */
-.statuspanel-label {
-    background: #2E5780 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    padding: 2px !important;    
-    color: #ffffff !important;
-}
-/* editbox on findbar */
-.findbar-textbox[status="notfound"] {
-  box-shadow: 0 0 0 1em #c00000 inset !important;
-  color: #ffffff !important;
-}
-/*
-button {
-    background: transparent !important;
-    border: 1px solid #444 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    color: #fff !important;
-    text-shadow: none !important;
-}
-button:hover {
-    background: rgba(255, 255, 255, 0.3) !important;
-}
-*/
