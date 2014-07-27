@@ -121,4 +121,12 @@
 #newtab-toggle[page-disabled]:hover {
     opacity: 1 !important;
 }
+/* TODO: reenable search and style it. */
+#newtab-search-container,
+#newtab-margin-undo-container {
+    display: none !important;
+}
+#newtab-margin-bottom {
+    background: transparent !important;
+}
 }
