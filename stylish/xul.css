@@ -3,7 +3,9 @@
 @namespace html url("http://www.w3.org/1999/xhtml");
 
 /* Place menu button and panel ui button at the left. Can't do this in customize mode. */
-#TabsToolbar > * { -moz-box-ordinal-group: 2 !important; }
+#TabsToolbar > * { -moz-box-ordinal-group: 4 !important; }
+#tabbrowser-tabs { -moz-box-ordinal-group: 2 !important; }
+#new-tab-button { -moz-box-ordinal-group: 3 !important;  }
 #ctraddon_appbutton,
 #ctraddon_panelui-button { -moz-box-ordinal-group: 1 !important; }
 
@@ -123,12 +125,14 @@
  *  Toolbars
  */
 
-.toolbar-primary {
+.toolbar-primary,
+.browserContainer > findbar {
     height: 16px !important;
     padding: 0 !important;
     margin: 0 !important;
     background: #111 !important;
     -moz-appearance: none !important;
+    transition: none !important;
 }
 
 #tabs-closebutton, #ctraddon_tabs-closebutton, #alltabs-button, 
@@ -177,7 +181,8 @@
  *  Toolbar buttons
  */
 
-#TabsToolbar toolbarbutton {
+#TabsToolbar toolbarbutton,
+.browserContainer > findbar toolbarbutton {
     -moz-appearance: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
@@ -225,24 +230,108 @@ toolbarbutton#new-tab-button {
     width: 16px !important;
 }
 
-.scrollbutton-up, .scrollbutton-down {
+.scrollbutton-up, .scrollbutton-down,
+.browserContainer .findbar-find-previous.tabbable,
+.browserContainer .findbar-find-next.tabbable {
     /* right arrow triangle icon */
     list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m11.4 1.95 0.000001 5.05v5.05l-4.4-2.48-4.37-2.52 4.37-2.52z"/></svg>') !important;
+}
+
+.browserContainer .findbar-find-previous {
+    transform: rotate(90deg) !important;
+}
+.browserContainer .findbar-find-next {
+    transform: rotate(-90deg) !important;
 }
 
 .scrollbutton-up > .toolbarbutton-icon,
 .scrollbutton-down > .toolbarbutton-icon {
     -moz-appearance: none !important;
 }
-/* Flip the right scroll button's icon. */
-.scrollbutton-down > .toolbarbutton-icon {
-    transform: scaleX(-1) !important;
- }
+
+/* Find bar. */
+
+.browserContainer > findbar,
+.browserContainer > findbar > .findbar-container {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.browserContainer > findbar > .findbar-container > label {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.browserContainer > findbar toolbarbutton {
+    background: transparent !important;
+    color: white !important;
+    -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
+    height: 16px !important;
+    width: 16px !important;
+}
+
+.browserContainer > findbar toolbarbutton > image {
+    margin: 0 !important;
+    opacity: 1 !important;
+}
+
+.browserContainer > findbar toolbarbutton > label {
+    display: none !important;
+}
+
+.browserContainer .findbar-highlight {
+    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><g fill="%23fff"><rect height="4" width="2" y="0" x="0"/><rect height="4" width="2" y="6" x="0"/><rect height="2" width="4" y="12" x="0" /><rect height="2" width="4" y="12" x="6"/><rect height="4" width="2" y="10" x="12"/><rect height="4" width="2" y="4" x="12"/><rect height="2" width="4" y="0" x="10"/><rect height="2" width="4" y="0" x="4"/></g></svg>') !important;
+}
+
+.browserContainer .findbar-case-sensitive {
+    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M 3 0 C 1.343 0 0 1.343 0 3 L 0 4 L 0 7 L 0 13 C 0 13.554 0.446 14 1 14 C 1.554 14 2 13.554 2 13 L 2 8 L 4 8 L 4 13 C 4 13.554 4.446 14 5 14 C 5.554 14 6 13.554 6 13 L 6 7 L 6 4 L 6 3 C 6 1.343 4.657 0 3 0 z M 3 2 C 3.552 2 4 2.448 4 3 L 4 4 L 4 6 L 2 6 L 2 4 L 2 3 C 2 2.448 2.448 2 3 2 z M 10 8 C 8.343 8 7 9.343 7 11 C 7 12.657 8.343 14 10 14 C 10.463 14 10.889 13.875 11.281 13.688 C 11.463 13.880 11.713 14 12 14 L 13 14 C 13.554 14 14 13.554 14 13 C 14 12.446 13.554 12 13 12 L 13 11 L 13 9 C 13 8.446 12.554 8 12 8 C 11.713 8 11.463 8.120 11.281 8.313 C 10.889 8.125 10.463 8 10 8 z M 10 10 C 10.552 10 11 10.448 11 11 C 11 11.552 10.552 12 10 12 C 9.448 12 9 11.552 9 11 C 9 10.448 9.448 10 10 10 z"/></svg>') !important;
+}
+
+.browserContainer .findbar-closebutton {
+    list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="M3.81,1.69,1.69,3.81,4.88,7,1.69,10.2,3.81,12.3,7,9.12l3.19,3.19,2.12-2.12-3.18-3.2,3.18-3.19-2.1-2.12-3.2,3.19-3.19-3.19z"/></svg>') !important;
+}
+
+.browserContainer .tabbable[checkState="0"] > image,
+.browserContainer .tabbable[disabled="true"] > image {
+    opacity: 0.5 !important;
+}
+
+.browserContainer .findbar-textbox {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 400px !important;
+}
+
+.browserContainer .findbar-textbox[status="notfound"] {
+    background: red !important;
+}
+
+.browserContainer .findbar-textbox[flash="true"] {
+    background: yellow !important;
+}
+
+.browserContainer > findbar .findbar-find-status {
+    display: none !important;
+}
+
+.browserContainer > findbar label.found-matches {
+    -moz-box-flex: 1 !important;
+    text-align: right !important;
+    margin-right: 1em !important;
+}
 
 /* Hover effect. */
 #identity-box:hover,
 .tabbrowser-tab:hover,
-#TabsToolbar toolbarbutton:hover {
+#TabsToolbar toolbarbutton:hover,
+.browserContainer findbar toolbarbutton:hover {
     background: #2E5780 !important;
     opacity: 1 !important;
     box-shadow: none !important;

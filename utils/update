@@ -46,7 +46,6 @@ stylestmpdir=/tmp/styles-$$
 mkdir -p $stylestmpdir
 for i in ${styles[*]}
 do
- $mydir/stylish_export_style $i > $stylestmpdir/$i.css
- $cmd $stylestmpdir/$i.css $ricedir/stylish/$i.css
+ $mydir/stylish_export_style $i > $stylestmpdir/$i.css && $cmd $stylestmpdir/$i.css $ricedir/stylish/$i.css
 done
 rm -r $stylestmpdir
