@@ -9,17 +9,14 @@
 /* AGENT_SHEET */
 @namespace url(http://www.w3.org/1999/xhtml);
 @namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-/*  Note: normally, Firefox uses the native drop-down list widget (the Gtk2 one on X11) 
-    for select. Properties changing the way the object looks like background don't work then.
-    However if either -moz-appearance is set to anything other than default (menulist), 
-    or border or border-radius are set, or in  other circumstances I don't know of, 
-    the element is rendered differently. In this case, Firefox renders an ugly drop-down marker.
-    This marker is styled by some properties of xul scrollbar (width and display at least).
-    Also, for some values of -moz-appearance (none for example), things like background 
-    can be set. */
-/*  Replace the ugly drop arrow button on select with a nice one */ 
-select > button,
-select:disabled > button {
+/*  Replace the ugly drop arrow button on select with a nice one.
+    By the way, where the hell is a bug for this? Or is it just me?
+    Note: since 35, mos-appearance none kills the dropmarker. This is OK for me -
+    I've added a fake one via background of select. See bug 649849. 
+    There's supposedly a pseudo called moz-select-button now, but no documnetation
+    of course. But I have to look into it. This here works for now.
+*/
+select {
 /*  Note: the attribute fill="<color>" controls the color of the image. 
     It's in hex notation, but one needs to replace # with %23. 
     For example to get  blue (#f00), that part should look like this: fill="%23f00" 
@@ -27,13 +24,12 @@ select:disabled > button {
     background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="10" width="20"><path fill="%23000" d="M0 0 10 10 20 0z"/></svg>') !important;
     background-size: auto 30% !important;
     background-color: transparent;
-    border: none;
+    background-repeat: no-repeat !important;
+    background-position: right 0.2em center !important;
 }
-/*  This for some reason controls the drop-marker button's width.
-    Also, if you put display: none !important; here, the button
-    won't be displayed. */
-select > xul|scrollbar[orient="vertical"] {
-    width: 20px !important;
+/* Accomodate for the dropmarker. */
+option {
+    padding-left: 2em !important; 
 }
 option, optgroup, select, input, textarea,
 input[type="button"], input[type="submit"],
