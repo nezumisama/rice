@@ -12,7 +12,7 @@
 /*  Replace the ugly drop arrow button on select with a nice one.
     By the way, where the hell is a bug for this? Or is it just me?
     Note: since 35, mos-appearance none kills the dropmarker. This is OK for me -
-    I've added a fake one via background of select. See bug 649849. 
+    I've added a fake one via background of select. See bug 649849.
     There's supposedly a pseudo called moz-select-button now, but no documnetation
     of course. But I have to look into it. This here works for now.
 */
