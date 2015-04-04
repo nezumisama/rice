@@ -1,0 +1,1 @@
+io.popen("mpvmenu")

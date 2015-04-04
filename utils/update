@@ -41,6 +41,9 @@ $cmd $XDG_CONFIG_HOME/geany/colorschemes/neon.conf $ricedir/geany/neon.conf
 $cmd $HOME/.ncmpcpp/config $ricedir/misc/ncmpcpp/config
 $cmd $HOME/.ncmpcpp/bindings $ricedir/misc/ncmpcpp/bindings
 $cmd $HOME/.themes/Darkasmysoul/gtk-2.0/gtkrc $ricedir/gtk/Darkasmysoul/gtk-2.0/gtkrc
+$cmd $XDG_CONFIG_HOME/mpv/mpv.conf $ricedir/misc/mpv/mpv.conf
+$cmd $XDG_CONFIG_HOME/mpv/input.conf $ricedir/misc/mpv/input.conf
+$cmd $XDG_CONFIG_HOME/mpv/scripts/mpvmenulaunch.lua $ricedir/misc/mpv/scripts/mpvmenulaunch.lua
 
 stylestmpdir=/tmp/styles-$$
 mkdir -p $stylestmpdir

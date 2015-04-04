@@ -6,5 +6,7 @@ cp -pi ncmpcpp/bindings $HOME/.ncmpcpp/bindings
 cp -pi tmux.conf $HOME/.tmux.conf
 cp -pi emacs.conf $HOME/.emacs
 cp -pi fonts.conf $XDG_CONFIG_HOME/fontconfig
-
+cp -pi mpv/mpv.conf $XDG_CONFIG_HOME/mpv/mpv.conf
+cp -pi mpv/input.conf $XDG_CONFIG_HOME/mpv/input.conf
+cp -pi mpv/scripts/mpvmenulaunch.lua $XDG_CONFIG_HOME/mpv/scripts/mpvmenulaunch.lua
 
