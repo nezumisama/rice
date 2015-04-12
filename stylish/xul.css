@@ -126,6 +126,7 @@
  */
 
 .toolbar-primary,
+#TabsToolbar,
 .browserContainer > findbar {
     height: 16px !important;
     padding: 0 !important;
