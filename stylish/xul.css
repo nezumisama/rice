@@ -198,8 +198,9 @@
     display: none !important;
 }
 
-#TabsToolbar toolbarbutton > image
-/* #addon-bar toolbarbutton > image */ {
+#TabsToolbar toolbarbutton > image,
+/* #addon-bar toolbarbutton > image */
+#PanelUI-menu-button > .toolbarbutton-badge-container > image {
     margin: 0 !important;
     padding: 0 !important;
     border: none !important;
@@ -212,7 +213,7 @@
     box-shadow: none !important; 
 }
 
-#PanelUI-menu-button > image {
+#PanelUI-menu-button > .toolbarbutton-badge-container > image {
     /* high-contrast white firefox icon */
     list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><path fill="%23fff" d="m5.26 13.8c-1.9-0.4-3.51-1.6-4.28-3.2-0.631-1.25-0.952-2.08-0.867-4.06 0.107-2.45 0.819-4.04 1.9-5.25l0.51-0.569 0.07 1.02c0.0669 0.999 0.0773 1.02 0.453 1.07 0.295 0.0341 0.528-0.089 1-0.528 0.656-0.609 1.57-1.1 2.07-1.1 0.298-0.00299 0.296 0.00673-0.0983 0.652-0.22 0.36-0.5 0.89-0.61 1.18-0.21 0.51-0.21 0.52 0.14 0.66 0.195 0.0746 0.619 0.136 0.944 0.136s0.657 0.0809 0.738 0.18c0.23 0.28-0.26 0.94-0.98 1.33-0.63 0.34-0.64 0.36-0.64 1v0.659l-0.41-0.21c-0.76-0.4-0.94 0.11-0.29 0.77 0.52 0.52 1.02 0.52 2.07-0.01 0.94-0.48 1.24-0.51 1.55-0.16 0.33 0.37 0.28 0.69-0.15 0.88-0.21 0.09-0.6 0.36-0.88 0.61-0.45 0.39-0.86 0.57-1.82 0.77-0.53 0.12 0.88 0.67 1.71 0.67 1.26 0 2.62-0.86 3.22-1.96 0.5-0.95 0.4-2.31-0.3-3.33-0.2-0.29-0.3-0.52-0.3-0.52 0.153 0 0.995 0.742 1.27 1.12l0.331 0.452v-0.623c0-1.11-0.662-2.87-1.49-3.98l-0.33-0.472 0.73 0.402c2.3 1.27 3.8 4.26 3.3 6.87-0.4 2.44-2.2 4.64-4.44 5.44-0.97 0.3-2.92 0.4-4.1 0.1z"/></svg>') !important;
     -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
