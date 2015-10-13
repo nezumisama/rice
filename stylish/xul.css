@@ -6,6 +6,7 @@
 #TabsToolbar > * { -moz-box-ordinal-group: 4 !important; }
 #tabbrowser-tabs { -moz-box-ordinal-group: 2 !important; }
 #new-tab-button { -moz-box-ordinal-group: 3 !important;  }
+#tabview-button { -moz-box-ordinal-group: 5 !important; }
 #ctraddon_appbutton,
 #ctraddon_panelui-button { -moz-box-ordinal-group: 1 !important; }
 
