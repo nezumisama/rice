@@ -30,3 +30,6 @@ def_key ">"
 
 def_key "ctrl-d"
    delete_browser_items
+
+def_command "sort" [deferred]
+    sort_playlist
