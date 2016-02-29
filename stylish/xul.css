@@ -21,7 +21,7 @@
     height: 14px !important;
  }
 
-/* 
+/*
  *  Urlbar
  */
 
@@ -267,6 +267,12 @@ toolbarbutton#new-tab-button {
 .scrollbutton-up > .toolbarbutton-icon,
 .scrollbutton-down > .toolbarbutton-icon {
     -moz-appearance: none !important;
+}
+
+/* Elements adjecent to scroll arrows (overflowing to tab). */
+.arrowscrollbox-overflow-end-indicator,
+.arrowscrollbox-overflow-start-indicator {
+    display: none !important;
 }
 
 /* Find bar. */
