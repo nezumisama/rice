@@ -1,5 +1,5 @@
 @namespace url("http://www.w3.org/1999/xhtml");
-@-moz-document url("chrome://browser/content/tabview.html") {
+@-moz-document url("chrome://tabgroups/content/tabview.xhtml") {
 body {
     color: #ffffff;
     font-size: 12px;
