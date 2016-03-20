@@ -6,7 +6,7 @@
 #TabsToolbar > * { -moz-box-ordinal-group: 4 !important; }
 #tabbrowser-tabs { -moz-box-ordinal-group: 2 !important; }
 #new-tab-button { -moz-box-ordinal-group: 3 !important;  }
-#tabview-button { -moz-box-ordinal-group: 5 !important; }
+#tabGroups-tabview-button { -moz-box-ordinal-group: 5 !important; }
 #ctraddon_appbutton,
 #ctraddon_panelui-button { -moz-box-ordinal-group: 1 !important; }
 
@@ -51,6 +51,10 @@
 
 #reader-mode-button[readeractive="true"] {
     filter: grayscale(100%) brightness(30) !important;
+}
+
+#identity-icon {
+    filter: grayscale(100%) !important;
 }
 
 /* Hiding this in customize mode breaks that mode. */ 
@@ -237,7 +241,7 @@
     -moz-image-region: rect(0px, 14px, 14px, 0px) !important;
 }
 
-#tabview-button {
+#tabGroups-tabview-button {
     /* 4 white rectangles */
     list-style-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" height="14" width="14"><g fill="%23fff"><rect height="4" width="4" y="0" x="0"/><rect height="4" width="8" y="0" x="6"/><rect height="8" width="8" y="6" x="0"/><rect height="8" width="4" y="6" x="10"/></g></svg>') !important;
     -moz-image-region: inherit !important;
