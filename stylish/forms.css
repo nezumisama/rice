@@ -72,6 +72,18 @@ input[type="radio"]:active {
     background: #ffffff !important;
     color: #000000 !important;
 }
+input[type="checkbox"],
+input[type="checkbox"]:hover:active,
+input[type="checkbox"]:active {
+    -moz-appearance: checkbox !important;
+    height: 16px !important;
+}
+input[type="radio"],
+input[type="radio"]:hover:active,
+input[type="radio"]:active {
+    -moz-appearance: radio !important;
+    height: 16px !important;
+}
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
